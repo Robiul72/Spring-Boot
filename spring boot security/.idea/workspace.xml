@@ -21,9 +21,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2aRxK8vAtsydQKbeSqIsBrqd9HV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,6 +43,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "bf491ef3ae1645cad41e0eef6d82f50c",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1704295127687</updated>
       <workItem from="1704295131360" duration="6520000" />
+      <workItem from="1705204123920" duration="91000" />
     </task>
     <servers />
   </component>

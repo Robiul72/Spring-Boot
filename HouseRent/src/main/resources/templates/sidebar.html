@@ -23,7 +23,7 @@
           </a>
         </li>
         <li>
-          <a href="/user/emp_create">
+          <a th:href="@{/houserentform}">
             <i class="bi bi-circle"></i><span> Create New Houses</span>
           </a>
         </li>
@@ -50,12 +50,12 @@
       </a>
       <ul id="client-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="/client_list">
+          <a th:href="@{/customer/view}">
             <i class="bi bi-circle"></i><span> Customer List </span>
           </a>
         </li>
         <li>
-          <a href="/client_reg_form">
+          <a th:href="@{/customerform}">
             <i class="bi bi-circle"></i><span> Customer Registration Form </span>
           </a>
         </li>
@@ -74,11 +74,7 @@
             <i class="bi bi-circle"></i><span> Customer Profile </span>
           </a>
         </li>
-        <li>
-          <a href="/client_update">
-            <i class="bi bi-circle"></i><span> Update Customer Status </span>
-          </a>
-        </li>
+
       </ul>
     </li><!-- End Customer Nav -->
 

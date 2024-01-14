@@ -18,6 +18,7 @@
         </tr>
         </thead>
         <tbody>
+
             <tr th:each="d: ${depList}">
                 <td th:text="${d.name}"></td>
                 <td th:text="${d.shortCode}"></td>
@@ -29,10 +30,8 @@
                         Update
                     </a>
                 </td>
-
-
-
             </tr>
+
         </tbody>
 
 

@@ -26,6 +26,7 @@ public class StudentController {
     public String allStudent(Model m) {
 
         List<Student> studentList=studentService.getAllStudent();
+
         m.addAttribute("studentList", studentList);
         m.addAttribute("title", "All Student");
         return "studenthome";

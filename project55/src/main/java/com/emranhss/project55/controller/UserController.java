@@ -29,6 +29,7 @@ public class UserController {
     @GetMapping("/admin/all")
     public String allUser(Model m){
         List<User> userList=userRepo.findAll();
+
         m.addAttribute("userList", userList);
         return "alluser";
 
