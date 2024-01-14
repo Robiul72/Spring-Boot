@@ -16,16 +16,18 @@ public class HouseRentModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    private String h_Rent_Area;
+    private String h_Rent_Owner_Name;
+
     private String h_Rent_Name;
     private String h_Rent_Category;
     private String h_Rent_Bedroom;
+    private String h_Rent_Price;
 
     @Column(unique = true, nullable = false)
     private String h_Rent_Email;
 
     private String h_Rent_Mobile;
-    private String h_Rent_Price;
-    private String h_Rent_Area;
     private String h_Rent_Address;
     private String h_Rent_Description;
 

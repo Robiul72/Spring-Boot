@@ -1,0 +1,70 @@
+<div th:insert="header.html"></div>
+<div th:insert="sidebar.html">...</div>
+
+
+<main id="main" class="main">
+    <div class="employee_summary">
+        <div class="pagetitle">
+            <h1>House Rent Form</h1>
+        </div>
+
+        <section class="section dashboard">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xxl-10 col-md-10">
+                            <div class="card info-card total_employees_card">
+
+                                <div class="px-3">
+<!--                                    <form th:action="@{/houserent/save}" th:object="${houserentedit}" method="post" >-->
+
+                                        <form th:action="@{/houserent/save}" th:object="${houserentedit}" method="post" >
+
+                                        <label>House Name</label>
+                                        <input type="text" th:field="*{h_Rent_Name}"><br>
+
+                                        <label>Owner Name</label>
+                                        <input type="text" th:field="*{h_Rent_Owner_Name}"><br>
+
+
+                                        <label>Category</label>
+                                        <input type="text" th:field="*{h_Rent_Category}"><br>
+
+                                        <label>Bedroom </label>
+                                        <input type="text" th:field="*{h_Rent_Bedroom}"><br>
+
+                                        <label>Email </label>
+                                        <input type="email" th:field="*{h_Rent_Email}"><br>
+
+                                        <label>Mobile No </label>
+                                        <input type="text" th:field="*{h_Rent_Mobile}"><br>
+
+                                        <label>Price </label>
+                                        <input type="text" th:field="*{h_Rent_Price}"><br>
+
+                                        <label>Area </label>
+                                        <input type="text" th:field="*{h_Rent_Area}"><br>
+
+                                        <label>Address </label>
+                                        <input type="text" th:field="*{h_Rent_Address}"><br>
+
+                                        <label>Description </label>
+                                        <input type="text" th:field="*{h_Rent_Description}"><br>
+
+                                        <input type="submit" value="Update">
+
+
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div><!--End Reports -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main><!-- End #main -->
+
+<div th:insert="footer.html">...</div>l>

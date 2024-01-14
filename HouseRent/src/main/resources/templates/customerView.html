@@ -1,17 +1,11 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
+
 
 <div th:insert="header.html"></div>
 
 <div class="p-4"></div>
 
 <div class="container p-5">
-    <table style="text-align: center">
+    <table style="text-align: center" >
         <thead>
         <tr>
 
@@ -24,14 +18,13 @@
             <th>Address</th>
             <th>Action</th>
 
-
         </tr>
         </thead>
 
-        <div style="text-align: center">
+        <div border="1" style="text-align: center">
             <tbody >
 
-            <tr  th:each="c: ${customerList}">
+            <tr th:each="c: ${customerList}">
 
                 <td th:text="${c.id}"></td>
                 <td th:text="${c.cus_Name}"></td>
