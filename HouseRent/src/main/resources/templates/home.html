@@ -1,16 +1,14 @@
-
-<div th:insert="~{header.html}">...</div>
-<div th:insert="~{sidebar.html}">...</div>
+<div th:insert="user_header"></div>
 
 <main id="main" class="main">
     <div class="pagetitle ms-2">
-        <h1>Dashboard</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a th:href="@{/}">House Rent</a></li>
-                <li class="breadcrumb-item active">View House </li>
-            </ol>
-        </nav>
+        <h1>Customer View Page</h1>
+<!--        <nav>-->
+<!--            <ol class="breadcrumb">-->
+<!--                <li class="breadcrumb-item "><a th:href="@{/}">House Rent</a></li>-->
+<!--                <li class="breadcrumb-item active" ><a th:href="@{/houseview}">View House </a> </li>-->
+<!--            </ol>-->
+<!--        </nav>-->
     </div>
 
     <br>
@@ -26,8 +24,8 @@
                             <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
                                 <div class="row g-0">
                                     <div class="col-md-12 p-3">
-                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..."><br><br>
-<!--                                        <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>-->
+                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..." height="100px"><br><br>
+                                 <!--  <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>-->
 
                                     </div>
 
@@ -56,11 +54,11 @@
 
                                         </div>
 
-                                           <div style="text-align: center">
-                                              <a class="btn btn-danger" th:href="@{'/houserent/delete/'+${h.id}}"> Delete </a>
+                                        <div style="text-align: center">
+                                            <a class="btn btn-primary" th:href="@{'#'+${h.id}}"> Details </a>
 
-                                               <a class="btn btn-warning" th:href="@{'/houserent/edit/'+${h.id}}"> Update </a>
-                                           </div>
+
+                                        </div>
 
                                         <div class="p-2"></div>
 
@@ -76,5 +74,5 @@
     </section>
 </main>
 
-<div th:insert="~{footer.html}">...</div>
+<div th:insert="~{user_footer}">...</div>
 

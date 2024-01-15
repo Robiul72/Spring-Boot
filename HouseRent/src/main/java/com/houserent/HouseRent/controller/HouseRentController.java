@@ -34,6 +34,15 @@ public class HouseRentController {
     // House Rent form end
 
 
+    // House Rent Save start
+    @PostMapping("/houserent/save")
+    public String saveHouseRent(@ModelAttribute("houserent") HouseRentModel houserent) {
+        houseRentService.saveHouseRent(houserent);
+        return "redirect:/houserent/view";
+    }
+    // House Rent Save end
+
+
     //  House Rent view start
     @GetMapping("/houserent/view")
     public  String customerView( Model m){
@@ -44,13 +53,7 @@ public class HouseRentController {
     // House Rent form end
 
 
-    // House Rent Save start
-    @PostMapping("/houserent/save")
-    public String saveHouseRent(@ModelAttribute HouseRentModel h) {
-        houseRentService.saveHouseRent(h);
-        return "redirect:/houserent/view";
-    }
-    // House Rent Save end
+
 
 
 

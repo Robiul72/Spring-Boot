@@ -1,195 +1,147 @@
-<div th:insert="header.html">...</div>
-<div th:insert="sidebar.html">...</div>
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
 
 
-<!--<main id="main" class="main">-->
+<main id="main" class="main">
 
-<!--    <div class="pagetitle">-->
-<!--        <h1>Dashboard</h1>-->
-<!--        <nav>-->
-<!--            <ol class="breadcrumb">-->
-<!--                <li class="breadcrumb-item"><a th:href="index.html">Home</a></li>-->
-<!--                <li class="breadcrumb-item active">Dashboard</li>-->
-<!--            </ol>-->
-<!--        </nav>-->
-<!--    </div>-->
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a th:href="@{/}">House Add Form</a></li>
 
-<!--    <section class="section">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-10 offset-1">-->
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
 
 
-<!--                <div class="card">-->
-<!--                    <div class="card-body">-->
-<!--                        <h1 class="card-title" style="text-align: center">House Rent Add Form</h1>-->
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center">House Add Form</h1>
 
-<!--                        &lt;!&ndash; Multi Columns Form &ndash;&gt;-->
-<!--                        <form class="row g-3" th:action="@{/student/stsave}" th:object="${studentform}" method="post" >-->
+                        <!-- Multi Columns Form -->
+                        <form th:action="@{/houserent/save}" th:object="${houserent}" method="post" >
 
-<!--                            <div class="col-md-10">-->
-<!--                                <label>Image</label>-->
-<!--                                <input type="file" name="file"/>-->
-<!--                                &lt;!&ndash;                                <input type="submit" value="Upload File"/>&ndash;&gt;-->
-<!--                            </div>-->
+                            <div class="col-md-10">
+                                <label>Image</label>
+                                <input type="file" name="file"/>
+                                <!--                                <input type="submit" value="Upload File"/>-->
+                            </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label  class="form-label">Area</label>
+                                <select  class="form-select" th:field="*{h_Rent_Area}">
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">Area</label>-->
-<!--                                <select  class="form-select">-->
-<!--                                    <option selected>Area Choose</option>-->
-<!--                                    <option> Mohammadpur </option>-->
-<!--                                    <option> Mirpur </option>-->
-<!--                                    <option> Dhanmundi </option>-->
-<!--                                    <option> Shahbag </option>-->
-<!--                                </select>-->
-<!--                            </div>-->
+                                    <option value="Mohammadpur">  Mohammadpur </option>
+                                    <option value="Mirpur"> Mirpur </option>
+                                    <option value="Dhanmundi"> Dhanmundi </option>
+                                    <option value="Shahbag"> Shahbag </option>
+                                </select>
+                            </div>
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label for="inputEmail5" class="form-label">House Owner Name</label>-->
-<!--                                <input type="text" class="form-control" >-->
-<!--                            </div>-->
+                            <div class="col-md-6">
+                                <label  class="form-label">House Owner Name</label>
+                                <input type="text" class="form-control" th:field="*{h_Rent_Owner_Name}" >
+                            </div>
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">House Name</label>-->
-<!--                                <input type="password" class="form-control" >-->
-<!--                            </div>-->
+                        </div>
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">House Category</label>-->
-<!--                                <select  class="form-select">-->
-<!--                                    <option selected>Category Choose</option>-->
-<!--                                    <option>1st</option>-->
-<!--                                    <option>2nd</option>-->
-<!--                                    <option>3th</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
+                        <div class="row">
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">Bedroom Category</label>-->
-<!--                                <select  class="form-select">-->
-<!--                                    <option selected>Bedroom Choose</option>-->
-<!--                                    <option>2 Bedroom</option>-->
-<!--                                    <option>3 Bedroom</option>-->
-<!--                                    <option>4 Bedroom</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
+                            <div class="col-md-6">
+                                <label  class="form-label">House Name</label>
+                                <input type="text" class="form-control" th:field="*{h_Rent_Name}">
+                            </div>
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label for="inputName5" class="form-label">Price</label>-->
-<!--                                <input type="text" class="form-control" >-->
-<!--                            </div>-->
+                            <div class="col-md-6">
+                                <label  class="form-label">House Category</label>
+                                <select  class="form-select" th:field="*{h_Rent_Category}">
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label for="inputEmail5" class="form-label">Email</label>-->
-<!--                                <input type="email" class="form-control" id="inputEmail5">-->
-<!--                            </div>-->
+                                    <option value="Classic"> Classic </option>
+                                    <option value="Medium"> Medium </option>
+                                    <option value="Normal"> Normal </option>
+                                </select>
+                            </div>
 
-<!--                            <div class="col-md-6">-->
-<!--                                <label for="inputName5" class="form-label">Mobile No</label>-->
-<!--                                <input type="text" class="form-control" id="inputName5">-->
-<!--                            </div>-->
+                        </div>
 
-<!--                            <div class="col-12">-->
-<!--                                <label  class="form-label">Address</label>-->
-<!--                                <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St">-->
-<!--                            </div>-->
 
-<!--                            <div class="col-12">-->
-<!--                                <label for="inputAddress2" class="form-label">Description</label>-->
-<!--                                <input type="textarea" class="form-control" id="inputAddress2"rows = "5" cols = "30" >-->
+                            <div class="row">
 
-<!--                            </div>-->
+                                <div class="col-md-6">
+                                    <label  class="form-label">Bedroom Category</label>
+                                    <select  class="form-select" th:field="*{h_Rent_Bedroom}">
+
+                                        <option value="2 Bedroom"> 2 Bedroom </option>
+                                        <option value="3 Bedroom"> 3 Bedroom </option>
+                                        <option value="4 Bedroom"> 4 Bedroom </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Price</label>
+                                    <input type="text" class="form-control" th:field="*{h_Rent_Price}">
+                                </div>
+
+                            </div>
+
+                          <div class="row">
+
+                              <div class="col-md-6">
+                                  <label  class="form-label">Email</label>
+                                  <input type="email" class="form-control" th:field="*{h_Rent_Email}">
+                              </div>
+
+                              <div class="col-md-6">
+                                  <label  class="form-label">Mobile No</label>
+                                  <input type="text" class="form-control" th:field="*{h_Rent_Mobile}">
+                              </div>
+
+                          </div>
+
+                            <div class="col-12">
+                                <label  class="form-label">Address</label>
+                                <textarea class="form-control" th:field="*{h_Rent_Address}"></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" th:field="*{h_Rent_Description}"></textarea>
+
+                            </div>
 
 
 <!--                            <div class="col-md-6">-->
 <!--                                <label for="inputZip" class="form-label">Zip Code</label>-->
 <!--                                <input type="text" class="form-control" id="inputZip">-->
 <!--                            </div>-->
-<!--                            <div class="col-12">-->
-<!--                                <div class="form-check">-->
-<!--                                    <input class="form-check-input" type="checkbox" id="gridCheck">-->
-<!--                                    <label class="form-check-label" for="gridCheck">-->
-<!--                                        Check me out-->
-<!--                                    </label>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="text-center">-->
-<!--                                <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--&lt;!&ndash;                                <button type="reset" class="btn btn-secondary">Reset</button>&ndash;&gt;-->
-<!--                            </div>-->
-<!--                        </form>&lt;!&ndash; End Multi Columns Form &ndash;&gt;-->
-
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </section>-->
-<!--</main>&lt;!&ndash; End #main &ndash;&gt;-->
-
-
-
-<main id="main" class="main">
-    <div class="employee_summary">
-        <div class="pagetitle">
-            <h1>House Rent Form</h1>
-        </div>
-
-        <section class="section dashboard">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-xxl-10 col-md-10">
-                            <div class="card info-card total_employees_card">
-
-                                <div class="px-3">
-                                    <form th:action="@{/houserent/save}" th:object="${houserent}" method="post" >
-
-                                        <label>House Name</label>
-                                        <input type="text" th:field="*{h_Rent_Name}"><br>
-
-                                        <label>Owner Name</label>
-                                        <input type="text" th:field="*{h_Rent_Owner_Name}"><br>
-
-
-                                        <label>Category</label>
-                                        <input type="text" th:field="*{h_Rent_Category}"><br>
-
-                                        <label>Bedroom </label>
-                                        <input type="text" th:field="*{h_Rent_Bedroom}"><br>
-
-                                        <label>Email </label>
-                                        <input type="email" th:field="*{h_Rent_Email}"><br>
-
-                                        <label>Mobile No </label>
-                                        <input type="text" th:field="*{h_Rent_Mobile}"><br>
-
-                                        <label>Price </label>
-                                        <input type="text" th:field="*{h_Rent_Price}"><br>
-
-                                        <label>Area </label>
-                                        <input type="text" th:field="*{h_Rent_Area}"><br>
-
-                                        <label>Address </label>
-                                        <input type="text" th:field="*{h_Rent_Address}"><br>
-
-                                        <label>Description </label>
-                                        <input type="text" th:field="*{h_Rent_Description}"><br>
-
-                                        <input type="submit" value="Save">
-
-
-                                    </form>
+                            <div class="col-12">
+                                <div class="form-check p-2 ms-3">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
                                 </div>
-
-
                             </div>
-                        </div><!--End Reports -->
+                            <div class="text-center p-3">
+                                <button type="submit" class="btn btn-primary">Save</button>
+<!--                                <button type="reset" class="btn btn-secondary">Reset</button>-->
+                            </div>
+                        </form><!-- End Multi Columns Form -->
+
                     </div>
                 </div>
+
             </div>
-        </section>
-    </div>
+
+        </div>
+    </section>
 </main><!-- End #main -->
 
-<div th:insert="footer.html">...</div>l>
+
+
+<div th:insert="~{footer.html}">...</div>

@@ -20,6 +20,8 @@
 
                                         <form th:action="@{/houserent/save}" th:object="${houserentedit}" method="post" >
 
+                                            <input type="hidden" th:field="*{id}">
+
                                         <label>House Name</label>
                                         <input type="text" th:field="*{h_Rent_Name}"><br>
 
