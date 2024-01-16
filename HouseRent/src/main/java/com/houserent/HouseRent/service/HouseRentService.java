@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class HouseRentService {
@@ -28,9 +29,9 @@ public class HouseRentService {
         houseRentRepo.deleteById(id);
     }
 
-    public HouseRentModel findById(int id){
+    public Optional<HouseRentModel> findById(int id){
 
-        return  houseRentRepo.findById(id).get();
+        return  houseRentRepo.findById(id);
     }
 
 }

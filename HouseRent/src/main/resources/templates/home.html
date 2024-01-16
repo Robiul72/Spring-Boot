@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
                                 <div class="row g-0">
-                                    <div class="col-md-12 p-3">
+                                    <div class="col-md-12 p-1">
                                         <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..." height="100px"><br><br>
                                  <!--  <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>-->
 
@@ -31,31 +31,18 @@
 
                                     <div class="col-md-12">
                                         <div class="card-body">
-                                            <h5 class="card-title" th:text=" 'House Details '"></h5>
+                                            <h5 class="card-title p-2" style="text-align: center" th:text="${h.h_Rent_Name}"></h5>
 
-                                            <b><span th:text="'House Name   : '+${h.h_Rent_Name}"></span></b><br>
-
-                                            <b><span th:text="'Owner Name   : '+${h.h_Rent_Owner_Name}"></span></b><br>
-
-
-                                            <b><span th:text="' Category :   ' +${h.h_Rent_Category}"></span></b><br>
-
-                                            <b><span th:text="' Bedroom :   ' +${h.h_Rent_Bedroom}"></span></b></br>
+                                            <b><span th:text="' Price :    ' +${h.h_Rent_Bedroom}"></span></b><br>
 
                                             <b><span th:text="' Price :    ' +${h.h_Rent_Price}"></span></b><br>
 
-                                            <b><span th:text="'Email No :   ' +${h.h_Rent_Email}"></span></b><br>
-
-                                            <b><span th:text="'Mobile No :   ' +${h.h_Rent_Mobile}"></span></b><br>
-
                                             <b><span th:text="' Address :   ' +${h.h_Rent_Address}"></span></b><br>
-
-                                            <b><span th:text="' Description :   ' +${h.h_Rent_Description}"></span></b><br>
 
                                         </div>
 
                                         <div style="text-align: center">
-                                            <a class="btn btn-primary" th:href="@{'#'+${h.id}}"> Details </a>
+                                            <a class="btn btn-primary" th:href="@{'/houserent/details/'+${h.id}}"> Details </a>
 
 
                                         </div>

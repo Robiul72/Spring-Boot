@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class HouseRentController {
@@ -70,9 +71,31 @@ public class HouseRentController {
     // House Rent Edit start
     @RequestMapping("/houserent/edit/{id}")
     public String editHouseRent(@PathVariable ("id") int id, Model m){
-        HouseRentModel h=houseRentService.findById(id);
+        Optional<HouseRentModel> h=houseRentService.findById(id);
         m.addAttribute("houserentedit", h);
         return "houserentedit";
     }
     // House Rent Edit end
+
+
+
+
+//    @RequestMapping("/houserent/details/{id}")
+//    public String houseDetails(@PathVariable("id") int id, Model m){
+//
+//       HouseRentModel house=houseRentService.findById(id);
+//        m.addAttribute("housedetails", house);
+//
+//        return "houseDetails";
+//    }
+
+    @RequestMapping("/houserent/details/{id}")
+    public String houseDetails(@PathVariable("id") int id, Model m){
+
+        Optional<HouseRentModel> house=houseRentService.findById(id);
+        m.addAttribute("housedetails", house);
+
+        return "houseDetails";
+    }
+
 }
