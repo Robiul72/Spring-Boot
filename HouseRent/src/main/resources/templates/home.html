@@ -24,8 +24,8 @@
                             <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
                                 <div class="row g-0">
                                     <div class="col-md-12 p-1">
-                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..." height="100px"><br><br>
-                                 <!--  <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>-->
+                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..." height="30px"><br><br>
+
 
                                     </div>
 
@@ -42,7 +42,7 @@
                                         </div>
 
                                         <div style="text-align: center">
-                                            <a class="btn btn-primary" th:href="@{'/houserent/details/'+${h.id}}"> Details </a>
+                                            <a class="btn btn-primary" th:href="@{'/houserent/details/'+${h.id}}"> More Details </a>
 
 
                                         </div>

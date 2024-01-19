@@ -1,0 +1,77 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en"-->
+<!--      xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
+
+<!--    -->
+<!--</head>-->
+<!--<body>-->
+
+<div th:insert="header.html"></div>
+<div th:insert="sidebar.html"></div>
+
+<div class="p-5"></div>
+
+<title th:text="${title}"></title>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Building Name</th>
+        <th>Owner Name</th>
+        <th>Floor No</th>
+        <th>Unit No</th>
+        <th>Bedroom</th>
+        <th>Location</th>
+        <th>Description</th>
+
+
+        <th>Monthly Rent</th>
+        <th>Electricity Rent</th>
+        <th>Water Rent</th>
+        <th>Garbage Rent</th>
+        <th>Total Amound</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="build:${listOfBuildingList}">
+
+        <td th:text="${build.build_Name}"></td>
+        <td th:if="${build.ownerName}" th:text="${build.ownerName.h_Rent_Owner_Name}"></td>
+        <td th:text="${build.floor_No}"></td>
+        <td th:text="${build.unit_No}"></td>
+        <td th:text="${build.bedroom}"></td>
+        <td th:text="${build.location}"></td>
+        <td th:text="${build.description}"></td>
+
+        <td th:text="${build.monthly_rent}"></td>
+        <td th:text="${build.electricity_rent}"></td>
+        <td th:text="${build.water_rent}"></td>
+        <td th:text="${build.garbage_rent}"></td>
+        <td th:text="${build.garbage_rent}"></td>
+        <td th:text="${build.total_cost}"></td>
+
+        <td >
+            <a class="btn btn-danger" th:href="@{'/build/delete/'+${build.id}}">
+                Delete
+            </a>
+            <a class="btn btn-warning" th:href="@{'/build/edit/'+${build.id}}">
+                Update
+            </a>
+
+
+        </td>
+
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+
+<div th:insert="footer.html"></div>

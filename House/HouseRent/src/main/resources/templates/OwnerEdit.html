@@ -1,0 +1,63 @@
+<div th:insert="header.html"></div>
+<div th:insert="sidebar.html">...</div>
+
+
+<main id="main" class="main">
+    <div class="employee_summary">
+        <div class="pagetitle">
+            <h1>House Rent Form</h1>
+        </div>
+
+        <section class="section dashboard">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xxl-10 col-md-10">
+                            <div class="card info-card total_employees_card">
+
+                                <div class="px-3">
+<!--                                    <form th:action="@{/houserent/save}" th:object="${houserentedit}" method="post" >-->
+
+                                        <form th:action="@{/owner/save}" th:object="${houserentedit}" method="post" >
+
+                                            <input type="hidden" th:field="*{id}">
+
+                                        <label>NID No</label>
+                                        <input type="text" th:field="*{h_Rent_NID}"><br>
+
+                                        <label>Owner Name</label>
+                                        <input type="text" th:field="*{h_Rent_Owner_Name}"><br>
+
+
+                                        <label>Email </label>
+                                        <input type="email" th:field="*{h_Rent_Email}"><br>
+
+                                        <label>Mobile No </label>
+                                        <input type="text" th:field="*{h_Rent_Mobile}"><br>
+
+                                        <label>House Agreement Date </label>
+                                        <input type="text" th:field="*{h_Rent_Date}"><br>
+
+<!--                                            <label>Owner Image </label>-->
+<!--                                            <input type="file" th:field="*{image}" accept="image/*" onchange="previewImage()"><br>-->
+<!--                                            <img th:if="${houserent.image ne null}" th:src="@{/assets/images/users/{filename}(filename=${user.image})}" alt="User Image" style="max-width: 100%;"><br>-->
+<!--                                            <img id="imagePreview" src="#" alt="User Image" style="display: none; width: 100px;">-->
+
+
+                                            <input type="submit" value="Update">
+
+
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div><!--End Reports -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main><!-- End #main -->
+
+<div th:insert="footer.html">...</div>l>

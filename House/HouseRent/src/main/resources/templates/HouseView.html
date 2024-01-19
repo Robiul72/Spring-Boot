@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <title th:text="${title}"></title>
+</head>
+<body>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>house_Owner</th>
+        <th>house_Category</th>
+        <th>house_Bedroom</th>
+        <th>house_Price</th>
+        <th>house_Description</th>
+        <th>house_Gender</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="house:${houseRentModelList}">
+
+
+<!--        <td th:text="${house.ownerName.h_Rent_Owner_Name}"></td>-->
+
+        <td th:if="${house.ownerName}" th:text="${house.ownerName.h_Rent_Owner_Name}"></td>
+
+        <td th:text="${house.house_Category}"></td>
+        <td th:text="${house.house_Bedroom}"></td>
+        <td th:text="${house.house_Price}"></td>
+        <td th:text="${house.house_Gender}"></td>
+        <td th:text="${house.house_Description}"></td>
+
+
+        <td >
+            <a class="btn btn-danger" th:href="@{'/house/delete/'+${house.id}}">
+                Delete
+            </a>
+            <a class="btn btn-warning" th:href="@{'/house/edit/'+${house.id}}">
+                Update
+            </a>
+
+
+        </td>
+
+    </tr>
+
+    </tbody>
+
+
+</table>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>

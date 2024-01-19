@@ -1,0 +1,74 @@
+
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+    <div class="pagetitle ms-2">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a th:href="@{/}">House Rent</a></li>
+                <li class="breadcrumb-item active">View House </li>
+            </ol>
+        </nav>
+    </div>
+
+    <br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-11 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+                            <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
+                                <div class="row g-0">
+                                    <div class="col-md-12 p-3">
+                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..."><br><br>
+<!--                                        <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>-->
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="card-body">
+                                            <h5 class="card-title" th:text=" 'House Details '"></h5>
+
+                                            <b><span th:text="'House Agreement Date: '+${h.h_Rent_Date}"></span></b><br>
+
+                                            <b><span th:text="'NID NO   : '+${h.h_Rent_NID}"></span></b><br>
+
+                                            <b><span th:text="'Owner Name   : '+${h.h_Rent_Owner_Name}"></span></b><br>
+
+                                            <b><span th:text="'Email No :   ' +${h.h_Rent_Email}"></span></b><br>
+
+                                            <b><span th:text="'Mobile No :   ' +${h.h_Rent_Mobile}"></span></b><br>
+
+<!--                                            <b><span th:text="'Owner Image :   ' +${h.image}"></span></b><br>-->
+
+
+                                        </div>
+
+                                           <div style="text-align: center">
+                                              <a class="btn btn-danger" th:href="@{'/owner/delete/'+${h.id}}"> Delete </a>
+
+                                               <a class="btn btn-warning" th:href="@{'/owner/edit/'+${h.id}}"> Update </a>
+                                           </div>
+
+                                        <div class="p-2"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end my work -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div th:insert="~{footer.html}">...</div>
+

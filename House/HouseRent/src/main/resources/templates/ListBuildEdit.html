@@ -1,0 +1,193 @@
+
+
+<div th:insert="user_header.html">...</div>
+<!--<div th:insert="~{sidebar.html}">...</div>-->
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a th:href="@{/}">Build Add Form</a></li>
+
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title" style="text-align: center">Build Add Form</h1>
+
+                        <!-- Multi Columns Form -->
+                        <form method="post" th:action="@{/build/save}" th:object="${buildedit}">
+
+                            <input type="hidden" th:field="*{id}">
+
+                            <div class="col-md-10">
+                                <label>Image</label>
+                                <input type="file" name="file"/>
+                                <!--                     <input type="submit" value="Upload File"/>-->
+                            </div>
+
+                            <div class="p-2"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label  class="form-label">Building Name</label>
+                                    <input type="text" class="form-control" th:field="*{build_Name}" >
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Owner Name</label>
+                                    <select type="text" class="form-control" th:field="*{ownerName}">
+                                        <option th:each="d:${ownerList}" th:text="${d.h_Rent_Owner_Name}"
+                                                th:value="${d.id}">Select One
+                                        </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="p-2"></div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Floor No</label>
+
+                                    <select  class="form-select" th:field="*{floor_No}">
+                                        <option value="2 Floor"> 1 Floor </option>
+                                        <option value="2 Floor"> 2 Floor </option>
+                                        <option value="3 Floor"> 3 Floor </option>
+                                        <option value="4 Floor"> 4 Floor </option>
+                                        <option value="5 Floor"> 5 Floor </option>
+                                        <option value="6 Floor"> 6 Floor </option>
+                                        <option value="7 Floor"> 7 Floor </option>
+                                        <option value="8 Floor"> 8 Floor </option>
+                                        <option value="9 Floor"> 9 Floor </option>
+                                        <option value="10 Floor"> 10 Floor </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Unit No</label>
+
+                                    <select  class="form-select" th:field="*{unit_No}">
+                                        <option value="A-1 ">A-1  </option>
+                                        <option value="A-2 ">A-2  </option>
+                                        <option value="B-1 "> B-1  </option>
+                                        <option value="B-2 "> B-2 </option>
+                                        <option value="C-1 "> C-1 </option>
+                                        <option value="C-2 "> C-2 </option>
+                                        <option value="D-1 "> D-1 </option>
+                                        <option value="D-2  "> D-2  </option>
+                                        <option value="E-1 "> E-1  </option>
+                                        <option value="E-2"> E-2  </option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="p-2"></div>
+
+                            <div class="row">
+
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Bedroom No</label>
+
+                                    <select  class="form-select" th:field="*{bedroom}">
+                                        <option value="2 Bedroom"> 1 Bedroom </option>
+                                        <option value="2 Bedroom"> 2 Bedroom </option>
+                                        <option value="3 Bedroom"> 3 Bedroom </option>
+                                        <option value="4 Bedroom"> 4 Bedroom </option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Location </label>
+                                    <textarea class="form-control" th:field="*{location}"></textarea>
+                                </div>
+
+                            </div>
+
+
+                            <div class="p-3"><h2 style="text-align: center">Total Monthly Cost</h2></div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label  class="form-label">Monthly House Rent</label>
+                                    <input type="text" class="form-control" th:field="*{monthly_rent}" >
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Electricity Charge</label>
+                                    <input type="text" class="form-control" th:field="*{monthly_rent}" >
+                                </div>
+                            </div>
+
+                            <div class="p-2"></div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label  class="form-label">Water Charge</label>
+                                    <input type="text" class="form-control" th:field="*{water_rent}" >
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label  class="form-label">Garbage Charge</label>
+                                    <input type="text" class="form-control" th:field="*{garbage_rent}" >
+                                </div>
+                            </div>
+
+                            <div class="p-3"></div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                    <label  class="form-label"><h4>Total Monthly Coste</h4></label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" th:field="*{garbage_rent}" >
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-check p-2 ms-3">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="text-center p-3">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+
+                        </form><!-- End Multi Columns Form -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+
+
+<div th:insert="user_footer.html">...</div>

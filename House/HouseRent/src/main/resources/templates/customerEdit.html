@@ -1,0 +1,66 @@
+<div th:insert="header.html">...</div>
+<div th:insert="sidebar.html">...</div>
+
+
+
+<main id="main" class="main">
+    <div class="employee_summary">
+        <div class="pagetitle">
+            <h1>House Rent Form</h1>
+        </div>
+
+        <section class="section dashboard">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xxl-10 col-md-10">
+                            <div class="card info-card total_employees_card">
+
+                                <div class="px-3">
+                                    <form th:action="@{/customer/save}" th:object="${customeredit}" method="post" >
+
+                                        <input type="hidden" th:field="*{id}">
+
+                                        <label>First Name</label>
+                                        <input type="text" th:field="*{cus_Name}"><br>
+
+                                        <label>Email</label>
+                                        <input type="email" th:field="*{cus_Email}"><br>
+
+                                        <label>Mobile No </label>
+                                        <input type="text" th:field="*{cus_Mobile}"><br>
+
+                                        <label>Gender </label>
+                                        <input type="text" th:field="*{cus_Gender}"><br>
+
+                                        <label>Address </label>
+                                        <input type="text" th:field="*{cus_Address}"><br>
+
+                                        <label>Date </label>
+                                        <input type="text" th:field="*{cus_Date}"><br>
+
+                                        <input type="submit" value="Update">
+
+
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div><!--End Reports -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main><!-- End #main -->
+
+
+
+
+
+
+
+
+
+<div th:insert="footer.html">...</div>
