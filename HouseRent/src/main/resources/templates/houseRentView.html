@@ -26,8 +26,12 @@
                             <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
                                 <div class="row g-0">
                                     <div class="col-md-12 p-3">
-                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..."><br><br>
-<!--                                        <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>-->
+
+                                        <div class="col-md-12 p-3">
+                                            <td><img height="250px" width="100%"  th:src="@{${'/house/display?id=' + h.id}}" alt=""></td>
+                                        </div>
+
+                                        <b><span th:text="'House Name   : '+${h.build_Name}"></span></b><br>
 
                                     </div>
 
@@ -35,24 +39,16 @@
                                         <div class="card-body">
                                             <h5 class="card-title" th:text=" 'House Details '"></h5>
 
-                                            <b><span th:text="'House Name   : '+${h.h_Rent_Name}"></span></b><br>
-
-                                            <b><span th:text="'Owner Name   : '+${h.h_Rent_Owner_Name}"></span></b><br>
+                                            <td th:if="${h.ownerName}" th:text="'Owner Name  :'+${h.ownerName.h_Rent_Owner_Name}"></td>
 
 
-                                            <b><span th:text="' Category :   ' +${h.h_Rent_Category}"></span></b><br>
+                                            <b><span th:text="' Bedroom :   ' +${h.bedroom}"></span></b></br>
 
-                                            <b><span th:text="' Bedroom :   ' +${h.h_Rent_Bedroom}"></span></b></br>
+                                            <b><span th:text="' Monthly Rent :    ' +${h.monthly_rent}"></span></b><br>
 
-                                            <b><span th:text="' Price :    ' +${h.h_Rent_Price}"></span></b><br>
+                                            <b><span th:text="' Address :   ' +${h.location}"></span></b><br>
 
-                                            <b><span th:text="'Email No :   ' +${h.h_Rent_Email}"></span></b><br>
-
-                                            <b><span th:text="'Mobile No :   ' +${h.h_Rent_Mobile}"></span></b><br>
-
-                                            <b><span th:text="' Address :   ' +${h.h_Rent_Address}"></span></b><br>
-
-                                            <b><span th:text="' Description :   ' +${h.h_Rent_Description}"></span></b><br>
+                                            <b><span th:text="' Description :   ' +${h.description}"></span></b><br>
 
                                         </div>
 

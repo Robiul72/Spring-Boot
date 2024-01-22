@@ -1,0 +1,129 @@
+
+<div th:insert="user_header.html">...</div>
+
+<main id="main" class="main p-4">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <div class="pagetitle  text-center">
+            <h1>House Details</h1>
+        </div>
+    </div> <br>
+
+    <section class="section profile">
+        <div th:action="@{/houserent/save}" th:object="${housedetails}" method="post">
+
+            <div class="col-xl-12"  >
+                <div class="card">
+                    <div class="card-body profile-card  d-flex flex-column align-items-center" >
+                        <div class="row" th:each="field : ${housedetails}">
+                            <h3 class="card-title p-2" style="text-align: center" th:text="${housedetails.get().build_Name}"></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="sid" th:value="${housedetails.get().id}">
+            <div class="row ">
+                <div class="col-xl-12 py-3">
+                    <div class="card">
+                        <div class="card-body ">
+                            <div class="row" th:each="field:${housedetails}">
+                                <div class="row p-4">
+                                    <td><img height="450px" width="100%"  th:src="@{${'/house/display?id=' + housedetails.get().id}}" alt=""></td>
+                                </div>
+                            </div>
+
+                            <div class="tab-content pt-2">
+                                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                    <h5 class="card-title">About</h5>
+                                    <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus.
+                                        Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit.
+                                        Fuga sequi sed ea saepe at unde.
+                                    </p>
+
+                                    <h5 class="card-title">House Details</h5>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  > House Name:</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().build_Name}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Floor No :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().floor_No}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Unit No :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().unit_No}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Bedroom No :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().bedroom}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >House Location :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().location}" ></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Description :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().description}"></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Monthly Rent :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().monthly_rent}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Water Charge :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().water_rent}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Wlectricity Charge :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().electricity_rent}" ></div>
+                                    </div>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Gadbage Charge :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().garbage_rent}" ></div>
+                                    </div>
+
+                                    <div class="p-2"></div>
+
+                                    <h3>Contact Us with Owner</h3>
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >House Owner Name :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().ownerName.h_Rent_Owner_Name}" ></div>
+                                        <div class="col-lg-3 col-md-4 lable"  >House Mobile :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().ownerName.h_Rent_Mobile}" ></div>
+                                        <div class="col-lg-3 col-md-4 lable"  >House Email No :</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().ownerName.h_Rent_Email}" ></div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <a class="btn btn-secondary" th:href="@{'/customerform'}">House Conform</a>
+                                    </div>
+
+                                </div>
+
+                            </div><!-- End Bordered Tabs -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<div th:insert="user_footer.html">...</div>

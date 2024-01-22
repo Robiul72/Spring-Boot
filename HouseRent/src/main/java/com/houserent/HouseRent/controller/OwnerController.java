@@ -1,9 +1,8 @@
 package com.houserent.HouseRent.controller;
 
-import com.houserent.HouseRent.model.CustomerFrom;
-import com.houserent.HouseRent.model.HouseRentModel;
-import com.houserent.HouseRent.repository.ICustomerRepo;
-import com.houserent.HouseRent.service.CustomerService;
+import com.houserent.HouseRent.model.OwnerModel;
+import com.houserent.HouseRent.repository.IOwnerRepo;
+import com.houserent.HouseRent.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,31 +24,29 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-//@RequestMapping("/customer")
-public class CustomerController {
+public class OwnerController {
+
 
     @Autowired
-    ICustomerRepo customerRepo;
+    IOwnerRepo ownerRepo;
+
     @Autowired
-    CustomerService customerService;
+    OwnerService ownerService;
 
-
-
-    //  Customer Form start
-    @GetMapping("/customerform")
-    public String customer(Model m){
-        m.addAttribute("customer", new CustomerFrom());
-        return "customerFrom";
+    //  House Rent Form start
+    @GetMapping("/ownerform")
+    public String ownerForm(Model m){
+        m.addAttribute("owner", new OwnerModel());
+        return "OwnerFrom";
     }
-    // Customer form end
-
+    // House Rent form end
 
     // Image Create start
-    @RequestMapping("/customer/display")
-    public ResponseEntity<byte[] > displayImage(@RequestParam ("id") long id) throws IOException {
-        Optional<CustomerFrom> customerOptional=customerRepo.findById((int) id);
-        if(customerOptional.isPresent()){
-            CustomerFrom owner = customerOptional.get();
+    @RequestMapping("/owner/display")
+    public ResponseEntity<byte[] > displayImage(@RequestParam ("id") int id) throws IOException {
+        Optional<OwnerModel> ownerOptional=ownerRepo.findById(id);
+        if(ownerOptional.isPresent()){
+            OwnerModel owner = ownerOptional.get();
             String uploadDirectory = "src/main/resources/static/assets/images/user/";
             String fileName = owner.getImage();
             String filePath = Paths.get(uploadDirectory, fileName).toString();
@@ -70,8 +67,8 @@ public class CustomerController {
         }
     }
 
-    @PostMapping("/customer/save")
-    public String save(@ModelAttribute @Validated CustomerFrom customer, BindingResult result, @RequestParam("image") MultipartFile image) throws IOException, SQLException {
+    @PostMapping("/owner/save")
+    public String save(@ModelAttribute @Validated OwnerModel owner, BindingResult result, @RequestParam("image") MultipartFile image) throws IOException, SQLException {
         //       Start Image
         if (!image.isEmpty()) {
             byte[] bytes = image.getBytes();
@@ -82,7 +79,7 @@ public class CustomerController {
             String fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
             // Create a new unique filename using timestamp
             String newFileName = "owner_image_" + timestamp + fileExtension;
-            customer.setImage(newFileName);
+            owner.setImage(newFileName);
             // Save the image to the specified directory
             String uploadDirectory = "src/main/resources/static/assets/images/user/";
             Path uploadPath = Paths.get(uploadDirectory);
@@ -93,50 +90,57 @@ public class CustomerController {
             Path filePath = uploadPath.resolve(newFileName);
             Files.write(filePath, bytes);
         }
-        customerService.saveCustomer(customer);
-        return "redirect:/customer/view";
+        ownerService.ownerSave(owner);
+        return "redirect:/owner/view";
     }
     // Image Create end
 
-
- //  Customer view start
-    @GetMapping("/customer/view")
-    public  String customerView( Model m){
-        List<CustomerFrom> customerList=customerRepo.findAll();
-        m.addAttribute("customerList", customerList);
-        return  "customerView";
+    //  House Rent view start
+    @GetMapping("/owner/view")
+    public  String ownerView( Model m){
+        List<OwnerModel> ownerModelList=ownerRepo.findAll();
+        m.addAttribute("ownerModelList", ownerModelList);
+        return "OwnerView";
     }
-    // Customer form end
+    // House Rent form end
 
 
-    // Customer Save start
-    @PostMapping("/customer/saves")
-    public String saveCustomer(@ModelAttribute CustomerFrom c) {
-        customerService.saveCustomer(c);
-        return "redirect:/customer/view";
+    // House Rent Save start
+    @PostMapping("/owner/saves")
+    public String saveHouseRent(@ModelAttribute("owner")  OwnerModel ownerModel) {
+        ownerService.ownerSave(ownerModel);
+        return "redirect:/owner/view";
     }
-    // Customer Save end
+    // House Rent Save end
 
 
 
-    // Customer delete start
-    @RequestMapping("/customer/delete/{id}")
-    public String deleteCustomer(@PathVariable int id){
-        customerService.deleteCustomer(id);
-        return "redirect:/customer/view";
+
+
+    // House Rent delete start
+    @RequestMapping("/owner/delete/{id}")
+    public String deleteOwner(@PathVariable int id){
+        ownerService.deleteOwner(id);
+        return "redirect:/owner/view";
     }
-    // Customer delete end
+
+//    @RequestMapping("/houserent/delete/{id}")
+//    public String deleteHouseRent(@PathVariable int id){
+//        houseRentService.deleteHouseRent(id);
+//        return "redirect:/houserent/view";
+//    }
+    // House Rent delete end
 
 
 
-    // Customer Edit start
-    @RequestMapping("/customer/edit/{id}")
-    public String editCustomer(@PathVariable ("id") int id, Model m){
-        CustomerFrom c=customerService.findById(id);
-        m.addAttribute("customeredit", c);
-        return "customeredit";
+    // House Rent Edit start
+    @RequestMapping("/owner/edit/{id}")
+    public String editOwner(@PathVariable ("id") int id, Model m){
+        Optional<OwnerModel> ownerModelList=ownerService.findById(id);
+        m.addAttribute("ownerModelList", ownerModelList);
+        return "OwnerEdit";
     }
-    // Customer Edit end
-
+    // House Rent Edit end
 
 }
+

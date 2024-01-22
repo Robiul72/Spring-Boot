@@ -1,5 +1,8 @@
-<div th:insert="~{header.html}">...</div>
-<div th:insert="~{sidebar.html}">...</div>
+
+
+<div th:insert="user_header.html">...</div>
+<!--<div th:insert="~{sidebar.html}">...</div>-->
+
 
 
 <main id="main" class="main">
@@ -8,7 +11,7 @@
         <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a th:href="@{/}">House Add Form</a></li>
+                <li class="breadcrumb-item "><a th:href="@{/}">Build Add Form</a></li>
 
             </ol>
         </nav>
@@ -21,130 +24,10 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title" style="text-align: center">House Add Form</h1>
+                        <h1 class="card-title" style="text-align: center">Build Add Form</h1>
 
                         <!-- Multi Columns Form -->
-<!--                        <form th:action="@{/houserent/save}" th:object="${houserent}" method="post" >-->
-
-<!--                            <div class="col-md-10">-->
-<!--                                <label>Image</label>-->
-<!--                                <input type="file" name="file"/>-->
-<!--   &lt;!&ndash;                     <input type="submit" value="Upload File"/>&ndash;&gt;-->
-<!--                            </div>-->
-
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">Area</label>-->
-<!--                                <select  class="form-select" th:field="*{h_Rent_Area}">-->
-
-<!--                                    <option value="Mohammadpur">  Mohammadpur </option>-->
-<!--                                    <option value="Mirpur"> Mirpur </option>-->
-<!--                                    <option value="Dhanmundi"> Dhanmundi </option>-->
-<!--                                    <option value="Shahbag"> Shahbag </option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">House Owner Name</label>-->
-<!--                                <input type="text" class="form-control" th:field="*{h_Rent_Owner_Name}" >-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-
-<!--                        <div class="row">-->
-
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">House Name</label>-->
-<!--                                <input type="text" class="form-control" th:field="*{h_Rent_Name}">-->
-<!--                            </div>-->
-
-<!--                            <div class="col-md-6">-->
-<!--                                <label  class="form-label">House Category</label>-->
-<!--                                <select  class="form-select" th:field="*{h_Rent_Category}">-->
-
-<!--                                    <option value="Classic"> Classic </option>-->
-<!--                                    <option value="Medium"> Medium </option>-->
-<!--                                    <option value="Normal"> Normal </option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-
-<!--                            <div class="row">-->
-
-<!--                                <div class="col-md-6">-->
-<!--                                    <label  class="form-label">Bedroom Category</label>-->
-<!--                                    <select  class="form-select" th:field="*{h_Rent_Bedroom}">-->
-
-<!--                                        <option value="2 Bedroom"> 2 Bedroom </option>-->
-<!--                                        <option value="3 Bedroom"> 3 Bedroom </option>-->
-<!--                                        <option value="4 Bedroom"> 4 Bedroom </option>-->
-<!--                                    </select>-->
-<!--                                </div>-->
-
-<!--                                <div class="col-md-6">-->
-<!--                                    <label class="form-label">Price</label>-->
-<!--                                    <input type="text" class="form-control" th:field="*{h_Rent_Price}">-->
-<!--                                </div>-->
-
-<!--                            </div>-->
-
-<!--                          <div class="row">-->
-
-<!--                              <div class="col-md-6">-->
-<!--                                  <label  class="form-label">Email</label>-->
-<!--                                  <input type="email" class="form-control" th:field="*{h_Rent_Email}">-->
-<!--                              </div>-->
-
-<!--                              <div class="col-md-6">-->
-<!--                                  <label  class="form-label">Mobile No</label>-->
-<!--                                  <input type="text" class="form-control" th:field="*{h_Rent_Mobile}">-->
-<!--                              </div>-->
-
-<!--                          </div>-->
-
-<!--                            <div class="col-12">-->
-<!--                                <label  class="form-label">Address</label>-->
-<!--                                <textarea class="form-control" th:field="*{h_Rent_Address}"></textarea>-->
-<!--                            </div>-->
-
-<!--                            <div class="col-12">-->
-<!--                                <label class="form-label">Description</label>-->
-<!--                                <textarea class="form-control" th:field="*{h_Rent_Description}"></textarea>-->
-
-<!--                            </div>-->
-
-
-<!--&lt;!&ndash;                            <div class="col-md-6">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label for="inputZip" class="form-label">Zip Code</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input type="text" class="form-control" id="inputZip">&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--                            <div class="col-12">-->
-<!--                                <div class="form-check p-2 ms-3">-->
-<!--                                    <input class="form-check-input" type="checkbox" id="gridCheck">-->
-<!--                                    <label class="form-check-label" for="gridCheck">-->
-<!--                                        Check me out-->
-<!--                                    </label>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="text-center p-3">-->
-<!--                                <button type="submit" class="btn btn-primary">Save</button>-->
-<!--&lt;!&ndash;                                <button type="reset" class="btn btn-secondary">Reset</button>&ndash;&gt;-->
-<!--                            </div>-->
-<!--                        </form>&lt;!&ndash; End Multi Columns Form &ndash;&gt;-->
-
-
-                        <form th:action="@{/house/save}" th:object="${houserent}" method="post" enctype="multipart/form-data" >
-
-                            <input type="hidden" th:field="*{id}"/>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="file" th:field="*{image}" accept="image/*" onchange="previewImage()"><br>
-                                    <img th:if="${houserent.image ne null}" th:src="@{/assets/images/users/{filename}(filename=${houserent.image})}" alt="Owner Image" style="max-width: 100%;"><br>
-                                    <img id="imagePreview" src="#" alt="Owner Image" style="display: none; width: 100px;">
-                                </div>
-                            </div>
+                        <form method="post" th:action="@{/build/save}" th:object="${build}">
 
                             <div class="p-2"></div>
 
@@ -157,9 +40,8 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Owner Name</label>
                                     <select type="text" class="form-control" th:field="*{ownerName}">
-
-                                        <option th:each="h:${ownerList}" th:text="${h.h_Rent_Owner_Name}"
-                                                th:value="${h.id}">Select One
+                                        <option th:each="d:${ownerList}" th:text="${d.h_Rent_Owner_Name}"
+                                                th:value="${d.id}">Select One
                                         </option>
                                     </select>
                                 </div>
@@ -220,21 +102,12 @@
                                         <option value="2 Bedroom"> 2 Bedroom </option>
                                         <option value="3 Bedroom"> 3 Bedroom </option>
                                         <option value="4 Bedroom"> 4 Bedroom </option>
-                                        <option value="5 Bedroom"> 5 Bedroom </option>
-                                        <option value="6 Bedroom"> 6 Bedroom </option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label  class="form-label">Location </label>
-                                    <select  class="form-select" th:field="*{location}">
-                                        <option value="Mohammadpur"> Mohammadpur </option>
-                                        <option value="Dhanmundi"> Dhanmundi </option>
-                                        <option value="Mirpur"> Mirpur </option>
-                                        <option value="Adabor"> Adabor </option>
-                                        <option value="Shere_Bangla_Nagor"> Shere_Bangla_Nagor </option>
-                                        <option value="Shahbag"> Shahbag </option>
-                                    </select>
+                                    <textarea class="form-control" th:field="*{location}"></textarea>
                                 </div>
 
                             </div>
@@ -356,6 +229,26 @@
                                 </div>
                             </div>
 
+                            <!-- Total Advance Pay -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label"><h4>Total Advance Pay =</h4></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" th:field="*{total_Advance}" id="totalAdvance">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label"><h4>Total  Due =</h4></label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" th:field="*{total_Due}" id="totalDue">
+                                </div>
+
+                            </div>
 
                             <div class="row">
 
@@ -374,8 +267,6 @@
 
                         </form><!-- End Multi Columns Form -->
 
-
-
                     </div>
                 </div>
 
@@ -385,9 +276,8 @@
     </section>
 </main><!-- End #main -->
 
-<script>
 
-    // calculatate create start
+<script>
     function calculateTotal() {
         // Your logic to calculate the total
         var monthlyRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
@@ -395,32 +285,19 @@
         var waterCharge = parseFloat(document.getElementById('waterCharge').value) || 0;
         var garbageCharge = parseFloat(document.getElementById('garbageCharge').value) || 0;
 
+
+
         var totalCost = monthlyRent + electricityCharge + waterCharge + garbageCharge;
 
         // Update the Total Monthly Cost field
         document.getElementById('totalCost').value = totalCost;
+
+        var totalAdvance = parseFloat(document.getElementById('totalAdvance').value) || 0;
+        var totalDue = totalCost - totalAdvance;
+
+        document.getElementById('totalDue').value = totalDue;
     }
-    // calculatate create end
-
-
-    // Image create start
-    function previewImage() {
-        var input = document.querySelector('input[type="file"]');
-        var preview = document.getElementById('imagePreview');
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-            };
-            reader.readAsDataURL(input.files[0]);
-        } else {
-            preview.src = '#';
-            preview.style.display = 'none';
-        }
-    }
-    // Image create end
-
 </script>
 
-<div th:insert="~{footer.html}">...</div>
+
+<div th:insert="user_footer.html">...</div>

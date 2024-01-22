@@ -20,7 +20,7 @@
 
                         <img src="/assets/img/news-2.jpg" > <br>
 
-                        <div th:text="${housedetails.get().h_Rent_Name}" ></div>
+                        <div th:text="${housedetails.get().build_Name}" ></div>
                     </div>
                 </div>
             </div>
@@ -31,20 +31,6 @@
 
                     <div class="card">
                         <div class="card-body ">
-
-<!--                             <h2>Bordered Tabs</h2>-->
-<!--                                                    <ul class="nav nav-tabs nav-tabs-bordered">-->
-<!--                                                        <li class="nav-item">-->
-<!--                                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>-->
-<!--                                                        </li>-->
-
-<!--                                                        <li class="nav-item">-->
-<!--                                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>-->
-<!--                                                        </li>-->
-<!--                                                    </ul>-->
-
-
-
 
                             <div class="tab-content pt-2">
 
@@ -57,61 +43,57 @@
                                     <h5 class="card-title">House Details</h5>
 
                                     <div class="row" th:each="field : ${housedetails}">
-
-                                        <div class="col-lg-3 col-md-4 lable"  >House Location</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Area}" ></div>
-                                    </div>
-
-                                    <div class="row" th:each="field : ${housedetails}">
                                         <div class="col-lg-3 col-md-4 lable"  >House Owner Name</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Owner_Name}" ></div>
-                                    </div>
-
-
-                                    <div class="row" th:each="field : ${housedetails}">
-                                        <div class="col-lg-3 col-md-4 lable"  >House Name</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Name}" ></div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().owner_Name}" ></div>
                                     </div>
 
 
                                     <div class="row" th:each="field : ${housedetails}">
 
-                                        <div class="col-lg-3 col-md-4 lable"  >House Category</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Category}" ></div>
-                                    </div>
+                                        <div class="col-lg-3 col-md-4 lable"  >Floor No</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().floor_No}" ></div>
+
+                                    </div>   <div class="row" th:each="field : ${housedetails}">
+
+                                    <div class="col-lg-3 col-md-4 lable"  >Unit No</div>
+                                    <div class="col-lg-9 col-md-8" th:text="${housedetails.get().unit_No}" ></div>
+                                </div>
+
 
                                     <div class="row" th:each="field : ${housedetails}">
 
                                         <div class="col-lg-3 col-md-4 lable"  >Bedroom Category</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Bedroom}" ></div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().bedroom}" ></div>
                                     </div>
 
                                     <div class="row" th:each="field : ${housedetails}">
 
-                                        <div class="col-lg-3 col-md-4 lable"  >Price</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Price}" ></div>
+                                        <div class="col-lg-3 col-md-4 lable"  >House Location</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().location}" ></div>
+                                    </div>
+
+
+                                    <div class="row" th:each="field : ${housedetails}">
+                                        <div class="col-lg-3 col-md-4 lable"  >Description</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().description}" ></div>
                                     </div>
 
                                     <div class="row" th:each="field : ${housedetails}">
 
-                                        <div class="col-lg-3 col-md-4 lable"  >Email</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Email}" ></div>
+                                        <div class="col-lg-3 col-md-4 lable"  >Monthly Rent</div>
+                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().monthly_rent}" ></div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Mobile</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Mobile}"></div>
-                                    </div>
+<!--                                    <div class="row" th:each="field : ${housedetails}">-->
+<!--                                        <div class="col-lg-3 col-md-4 lable"  >Email</div>-->
+<!--                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Email}" ></div>-->
+<!--                                    </div>-->
 
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Address</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Address}"></div>
-                                    </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-lg-3 col-md-4 label">Mobile</div>-->
+<!--                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Mobile}"></div>-->
+<!--                                    </div>-->
 
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Description</div>
-                                        <div class="col-lg-9 col-md-8" th:text="${housedetails.get().h_Rent_Description}"></div>
-                                    </div>
 
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Contact Us</button>

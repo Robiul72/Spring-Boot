@@ -19,25 +19,44 @@
       <ul id="hrm-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
           <a th:href="@{/houserent/view}">
-            <i class="bi bi-circle"></i><span> All Houses</span>
+            <i class="bi bi-circle"></i><span> Houses List</span>
           </a>
         </li>
         <li>
           <a th:href="@{/houserentform}">
-            <i class="bi bi-circle"></i><span> Create New Houses</span>
+            <i class="bi bi-circle"></i><span> Houses Add Form</span>
           </a>
         </li>
 
         <li>
-          <a th:href="@{/houserent/view}">
-            <i class="bi bi-circle"></i><span> Houses Profile </span>
+          <a th:href="@{/ownerform}">
+            <i class="bi bi-circle"></i><span> Owner Add Form</span>
           </a>
         </li>
+
         <li>
-          <a href="emp_update.html">
-            <i class="bi bi-circle"></i><span> Update Houses Status </span>
+          <a th:href="@{/owner/view}">
+            <i class="bi bi-circle"></i><span> Owner List</span>
           </a>
         </li>
+
+<!--        <li>-->
+<!--          <a th:href="@{/buildform}">-->
+<!--            <i class="bi bi-circle"></i><span> Building Add Form </span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a  th:href="@{/build/view}">-->
+<!--            <i class="bi bi-circle"></i><span> Building List </span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+        <li>
+          <a  th:href="@{/buildinghome}">
+            <i class="bi bi-circle"></i><span> Home Page </span>
+          </a>
+        </li>
+
       </ul>
     </li><!-- End House Nav -->
 

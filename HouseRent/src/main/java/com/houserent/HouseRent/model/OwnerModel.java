@@ -6,25 +6,30 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "owner_list")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CustomerFrom {
+public class OwnerModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String cus_Name;
+
+    private String h_Rent_NID;
+    private String h_Rent_Owner_Name;
+
+    private String h_Rent_Date;
 
     @Column(unique = true, nullable = false)
-    private String cus_Email;
+    private String h_Rent_Email;
 
-    private String cus_Mobile;
-    private String cus_Gender;
-    private String cus_Address;
-    private String cus_Date;
+    private String h_Rent_Mobile;
+
     private String image;
+
+
+
 
 
 }
