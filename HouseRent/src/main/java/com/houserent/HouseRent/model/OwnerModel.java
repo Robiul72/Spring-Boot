@@ -28,6 +28,8 @@ public class OwnerModel {
 
     private String image;
 
+    private String h_Date;
+
 
 
 

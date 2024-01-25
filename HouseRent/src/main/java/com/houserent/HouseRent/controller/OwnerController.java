@@ -1,5 +1,6 @@
 package com.houserent.HouseRent.controller;
 
+import com.houserent.HouseRent.model.HouseRentModel;
 import com.houserent.HouseRent.model.OwnerModel;
 import com.houserent.HouseRent.repository.IOwnerRepo;
 import com.houserent.HouseRent.service.OwnerService;
@@ -24,6 +25,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+//@RequestMapping("/owner")
 public class OwnerController {
 
 
@@ -141,6 +143,19 @@ public class OwnerController {
         return "OwnerEdit";
     }
     // House Rent Edit end
+
+
+
+    @GetMapping("/owner-rent-report")
+    public String generateReport(Model model) {
+        List<OwnerModel> owners = ownerService.getAllOwner();
+        int totalOwners = owners.size();
+
+        model.addAttribute("owners", owners);
+        model.addAttribute("totalOwners", totalOwners);
+
+        return "index";
+    }
 
 }
 

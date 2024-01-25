@@ -37,14 +37,13 @@ public class HouseRentModel {
 
     private String image;
 
-//    @Temporal(TemporalType.TIMESTAMP)
-//    @Column(name = "pdate", nullable = false, updatable = false)
-//    private Date pdate;
-//
-//    @PrePersist
-//    protected void onCreate() {
-//        pdate = new Date();
-//    }
+    @Temporal(TemporalType.TIMESTAMP)
+
+    private Date date;
+    @PrePersist
+    protected void onCreate() {
+        date = new Date();
+    }
 
 
 

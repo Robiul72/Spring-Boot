@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+//@RequestMapping("/admin")
 public class HouseRentController {
     @Autowired
     IHouseRentRepo houseRentRepo;
@@ -164,9 +165,17 @@ public class HouseRentController {
 //    }
 
 
+//    @RequestMapping("/houseLocationAndBedroomSearch")
+//    public String  houseSearch (Model model, String location, String bedroom){
+//        List<HouseRentModel> houseList = houseRentRepo.findByBedroomAndLocation(bedroom,location);
+//        model.addAttribute("userjobdatas",houseList);
+//
+//        return "BuildingHome";
+//    }
+
     @RequestMapping("/houseLocationAndBedroomSearch")
-    public String  houseSearch (Model model, String location, String bedroom){
-        List<HouseRentModel> houseList = houseRentRepo.findByBedroomAndLocation(bedroom,location);
+    public String  houseSearch (Model model, String location){
+        List<HouseRentModel> houseList = houseRentRepo.findByLocation(location);
         model.addAttribute("userjobdatas",houseList);
 
         return "BuildingHome";
@@ -180,11 +189,42 @@ public class HouseRentController {
         return "BuildingHome";
     }
 
-    @GetMapping("/buildinghome")
-    public String houseView(Model m){
-        List<HouseRentModel> houseRentModelList=houseRentRepo.findAll();
-        m.addAttribute("houseRentModelList", houseRentModelList);
-        return "BuildingHome";
+//    @GetMapping("/buildinghome")
+//    public String houseView(Model m){
+//        List<HouseRentModel> houseRentModelList=houseRentRepo.findAll();
+//        m.addAttribute("houseRentModelList", houseRentModelList);
+//        return "BuildingHome";
+//    }
+
+    @GetMapping("/successful")
+    public String successPage(){
+
+        return  "successPage";
     }
+
+
+//    @GetMapping("/house-rent-report")
+//    public String generateReport(Model model) {
+//        List<HouseRentModel> houseRents = houseRentService.getAllHouseRents();
+//        int totalHouses = houseRents.size();
+//
+//        model.addAttribute("houseRents", houseRents);
+//        model.addAttribute("totalHouses", totalHouses);
+//
+//        return "index";
+//    }
+
+
+//    @GetMapping("/house-rent-report")
+//    public String houseReport(Model model) {
+//        List<HouseRentModel> houseRents = houseRentService.getAllHouseRents();
+//        int totalHouses = houseRents.size();
+//
+//        model.addAttribute("houseRents", houseRents);
+//        model.addAttribute("totalHouses", totalHouses);
+//
+//        return "index";
+//    }
+
 
 }
