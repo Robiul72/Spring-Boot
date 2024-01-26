@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+//@RequestMapping("/owner")
 public class OwnerController {
 
 

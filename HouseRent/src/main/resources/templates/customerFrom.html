@@ -77,7 +77,7 @@
         <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a th:href="@{/}">Customer Form</a></li>
+                <li class="breadcrumb-item "><a th:href="@{/}">Adreement </a></li>
 
             </ol>
         </nav>
@@ -90,7 +90,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title" style="text-align: center">Customer Form</h1>
+                        <h1 class="card-title" style="text-align: center">Adreement Form</h1>
 
                         <!-- Multi Columns Form -->
                         <form th:action="@{/customer/save}" th:object="${customer}" method="post" enctype="multipart/form-data" >
@@ -132,18 +132,21 @@
 
                             <div class="col-12">
                                 <label  class="form-label">Address</label>
-                                <input type="text" class="form-control"  th:field="*{cus_Address}">
+<!--                                <input type="text" class="form-control"  th:field="*{cus_Address}">-->
+                                <textarea class="form-control" th:field="*{cus_Address}"></textarea>
+
                             </div>
 
                             <div class="col-12">
                                 <label class="form-label">Date</label>
-                                <input type="textarea" class="form-control" th:field="*{cus_Date}" >
+                                <input type="date" class="form-control" th:field="*{cus_Date}" >
                             </div>
 
                             <div class="text-center p-3">
 <!--                                <button type="submit" class="btn btn-primary">Submit</button>-->
-                                <input type="submit" value="Save">
+                                <input type="submit" th:href="@{'/successful'}" value="Save">
 <!--                                <button type="reset" class="btn btn-secondary">Reset</button>-->
+<!--                                <a class="btn btn-secondary" th:href="@{'/successful'}">Submit</a>-->
                             </div>
                         </form><!-- End Multi Columns Form -->
 

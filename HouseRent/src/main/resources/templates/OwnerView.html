@@ -7,8 +7,8 @@
     <h1>Dashboard</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item "><a th:href="@{/}">House Rent</a></li>
-        <li class="breadcrumb-item active">View House </li>
+        <li class="breadcrumb-item "><a th:href="@{/}">House Owner</a></li>
+        <li class="breadcrumb-item active">Owner View  </li>
       </ol>
     </nav>
   </div>
@@ -48,6 +48,9 @@
                       <b><span th:text="'Email No :   ' +${h.h_Rent_Email}"></span></b><br>
 
                       <b><span th:text="'Mobile No :   ' +${h.h_Rent_Mobile}"></span></b><br>
+
+                      <b><span th:date="'Start Date :   ' +${h.h_Date}"></span></b><br>
+<!--                        <input type="date" class="form-control" th:field="*{h.h_Date}" >-->
 
                       <!--                                            <b><span th:text="'Owner Image :   ' +${h.image}"></span></b><br>-->
 

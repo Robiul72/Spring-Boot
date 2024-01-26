@@ -20,7 +20,6 @@
             <div class="col-md-11 offset-1">
                 <div class="card">
                     <div class="card-body mt-3">
-
                         <!-- start my work-->
                         <div class="row">
                             <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
@@ -28,7 +27,9 @@
                                     <div class="col-md-12 p-3">
 
                                         <div class="col-md-12 p-3">
-                                            <td><img height="250px" width="100%"  th:src="@{${'/house/display?id=' + h.id}}" alt=""></td>
+                                            <td><img height="250px" width="100%"  th:src="@{${'/house/display?id=' + h.id}}" alt=""></td> <br>
+
+                                            <h6 th:if="${h.date != null}" th:text="${'Publish Date: ' + #dates.format(h.date, 'EEE, MMM dd, yyyy')}"></h6>
                                         </div>
 
                                         <b><span th:text="'House Name   : '+${h.build_Name}"></span></b><br>

@@ -51,6 +51,8 @@ public class HouseRentService {
 //
 //        return houseList;
 //    }
-
+public List<HouseRentModel> getAllHouseRents() {
+    return houseRentRepo.findAll();
+}
 
 }

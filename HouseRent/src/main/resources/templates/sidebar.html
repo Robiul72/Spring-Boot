@@ -6,7 +6,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="/">
+      <a class="nav-link " th:href="@{/admin}">
         <i class="bi bi-grid"></i>
         <span> Dashboard</span>
       </a>
@@ -17,16 +17,18 @@
         <i class="bi bi-hr"></i><span> Admin </span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
       <ul id="hrm-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a th:href="@{/houserent/view}">
-            <i class="bi bi-circle"></i><span> Houses List</span>
-          </a>
-        </li>
+
         <li>
           <a th:href="@{/houserentform}">
             <i class="bi bi-circle"></i><span> Houses Add Form</span>
           </a>
         </li>
+        <li>
+          <a th:href="@{/houserent/view}">
+            <i class="bi bi-circle"></i><span> Houses List</span>
+          </a>
+        </li>
+
 
         <li>
           <a th:href="@{/ownerform}">
@@ -52,7 +54,7 @@
 <!--        </li>-->
 
         <li>
-          <a  th:href="@{/buildinghome}">
+          <a  th:href="@{/singleHouseView}">
             <i class="bi bi-circle"></i><span> Home Page </span>
           </a>
         </li>
@@ -65,34 +67,35 @@
     <!-- End Customer Nav -->
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#client-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-hr"></i><span> Customer </span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-hr"></i><span>Customer Order </span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
       <ul id="client-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+<!--        <li>-->
+<!--          <a th:href="@{/customerform}">-->
+<!--            <i class="bi bi-circle"></i><span> Order Form </span>-->
+<!--          </a>-->
+<!--        </li>-->
         <li>
           <a th:href="@{/customer/view}">
-            <i class="bi bi-circle"></i><span> Customer List </span>
+            <i class="bi bi-circle"></i><span> Order List </span>
           </a>
         </li>
-        <li>
-          <a th:href="@{/customerform}">
-            <i class="bi bi-circle"></i><span> Customer Registration Form </span>
-          </a>
-        </li>
-        <li>
-          <a href="/client_order_list">
-            <i class="bi bi-circle"></i><span> Customer  Rent_Order List </span>
-          </a>
-        </li>
-        <li>
-          <a href="/client_order_form">
-            <i class="bi bi-circle"></i><span> Customer Rent_Order Form </span>
-          </a>
-        </li>
-        <li>
-          <a href="/client_profile">
-            <i class="bi bi-circle"></i><span> Customer Profile </span>
-          </a>
-        </li>
+
+<!--        <li>-->
+<!--          <a href="/client_order_list">-->
+<!--            <i class="bi bi-circle"></i><span> Customer  Rent_Order List </span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="/client_order_form">-->
+<!--            <i class="bi bi-circle"></i><span> Customer Rent_Order Form </span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--          <a href="/client_profile">-->
+<!--            <i class="bi bi-circle"></i><span> Customer Profile </span>-->
+<!--          </a>-->
+<!--        </li>-->
 
       </ul>
     </li><!-- End Customer Nav -->

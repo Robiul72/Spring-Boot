@@ -10,5 +10,8 @@ import java.util.List;
 @Repository
 public interface IHouseRentRepo extends JpaRepository<HouseRentModel, Long> {
 
-    List<HouseRentModel> findByBedroomAndLocation(String bedroom, String location);
+//    List<HouseRentModel> findByBedroomAndLocation(String bedroom, String location);
+
+    List<HouseRentModel> findByLocation(String location);
+
 }

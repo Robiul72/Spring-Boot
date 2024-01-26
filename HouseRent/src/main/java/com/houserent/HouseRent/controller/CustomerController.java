@@ -94,7 +94,7 @@ public class CustomerController {
             Files.write(filePath, bytes);
         }
         customerService.saveCustomer(customer);
-        return "redirect:/customer/view";
+        return "redirect:/singleHouseView";
     }
     // Image Create end
 
@@ -137,6 +137,22 @@ public class CustomerController {
         return "customeredit";
     }
     // Customer Edit end
+
+
+
+    @GetMapping("/customer-rent-report")
+    public String generateReportcustomer(Model model) {
+        List<CustomerFrom> customers = customerService.getAllCustomer();
+        int totalcustomer = customers.size();
+
+        model.addAttribute("customers", customers);
+        model.addAttribute("totalcustomer", totalcustomer);
+
+        return "index";
+    }
+
+
+
 
 
 }
