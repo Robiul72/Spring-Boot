@@ -97,6 +97,7 @@
                                             <div class="col-lg-9 col-md-8" th:text="${housedetails.get().electricity_rent}" ></div>
                                         </div>
 
+<<<<<<< HEAD
                                         <div class="row" th:each="field : ${housedetails}">
                                             <div class="col-lg-3 col-md-4 lable"  >Gadbage Charge :</div>
                                             <div class="col-lg-9 col-md-8" th:text="${housedetails.get().garbage_rent}" ></div>
@@ -106,6 +107,23 @@
                                         <div class="row" th:each="field : ${housedetails}">
                                             <div class="col-lg-3 col-md-4 lable"  >All Include Cost :</div>
                                             <div class="col-lg-9 col-md-8" th:text="${housedetails.get().total_cost}" ></div>
+=======
+                                        <div class="row"  th:each="field : ${housedetails}">
+                                            <div class="col-lg-3 col-md-4 lable"  >Gadbage Charge :</div>
+                                            <div class="col-lg-9 col-md-8 " th:text="${housedetails.get().garbage_rent}" ></div>
+                                        </div>
+
+<!--                                        // under line create-->
+                                        <div class="row">
+                                            <b ><hr style="font-weight: bold; height: 2px; background-color: black " ></b>
+                                        </div>
+
+                                        <div class="row" th:each="field : ${housedetails}">
+                                            <div class="col-lg-3 col-md-4 lable" ><b>All Include Cost :</b></div>
+                                            <div class="col-lg-9 col-md-8" th:inline="text">
+                                                <b th:text="${housedetails.get().total_cost}"></b>
+                                            </div>
+>>>>>>> 0feac06c7d881a01c80ed618e36c274ca4031ede
                                         </div>
 
                                         <div class="p-2"></div>

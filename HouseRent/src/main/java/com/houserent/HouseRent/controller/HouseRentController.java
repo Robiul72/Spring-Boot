@@ -203,6 +203,7 @@ public class HouseRentController {
     }
 
 
+<<<<<<< HEAD
     @GetMapping("/house-rent-report")
     public String generateReport(Model model) {
         List<HouseRentModel> houseRents = houseRentService.getAllHouseRents();
@@ -213,6 +214,30 @@ public class HouseRentController {
 
         return "index";
     }
+=======
+//    @GetMapping("/house-rent-report")
+//    public String generateReport(Model model) {
+//        List<HouseRentModel> houseRents = houseRentService.getAllHouseRents();
+//        int totalHouses = houseRents.size();
+//
+//        model.addAttribute("houseRents", houseRents);
+//        model.addAttribute("totalHouses", totalHouses);
+//
+//        return "index";
+//    }
+
+
+//    @GetMapping("/house-rent-report")
+//    public String houseReport(Model model) {
+//        List<HouseRentModel> houseRents = houseRentService.getAllHouseRents();
+//        int totalHouses = houseRents.size();
+//
+//        model.addAttribute("houseRents", houseRents);
+//        model.addAttribute("totalHouses", totalHouses);
+//
+//        return "index";
+//    }
+>>>>>>> 0feac06c7d881a01c80ed618e36c274ca4031ede
 
 
 }

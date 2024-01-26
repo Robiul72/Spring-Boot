@@ -143,10 +143,17 @@ public class CustomerController {
     @GetMapping("/customer-rent-report")
     public String generateReportcustomer(Model model) {
         List<CustomerFrom> customers = customerService.getAllCustomer();
+<<<<<<< HEAD
         int totalcustomer = customers.size();
 
         model.addAttribute("customers", customers);
         model.addAttribute("totalcustomer", totalcustomer);
+=======
+        int totalcustomers = customers.size();
+
+        model.addAttribute("customers", customers);
+        model.addAttribute("totalcustomers", totalcustomers);
+>>>>>>> 0feac06c7d881a01c80ed618e36c274ca4031ede
 
         return "index";
     }
