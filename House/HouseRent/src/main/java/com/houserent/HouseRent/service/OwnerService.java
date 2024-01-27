@@ -1,6 +1,6 @@
 package com.houserent.HouseRent.service;
 
-import com.houserent.HouseRent.model.OwnerEntityModel;
+import com.houserent.HouseRent.model.OwnerModel;
 import com.houserent.HouseRent.repository.IOwnerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,30 +12,30 @@ import java.util.Optional;
 public class OwnerService {
 
     @Autowired
-    private IOwnerRepo houseRentRepo;
+    private IOwnerRepo ownerRepo;
 
 
-    public List<OwnerEntityModel> getAllOwner(){
+    public List<OwnerModel> getAllOwner(){
 
-        return houseRentRepo.findAll();
+        return ownerRepo.findAll();
     }
 
-    public void saveHouseRent(OwnerEntityModel houseRentModel){
+    public void ownerSave(OwnerModel ownerModel){
 
-        houseRentRepo.save(houseRentModel);
+        ownerRepo.save(ownerModel);
     }
 
-    public List<OwnerEntityModel> getAllStuCustomer(){
-        return houseRentRepo.findAll();
+    public List<OwnerModel> getAllStuCustomer(){
+        return ownerRepo.findAll();
     }
 
-    public  void deleteHouseRent(int id){
-        houseRentRepo.deleteById(id);
+    public  void deleteOwner(int id){
+        ownerRepo.deleteById(id);
     }
 
-    public Optional<OwnerEntityModel> findById(int id){
+    public Optional<OwnerModel> findById(int id){
 
-        return  houseRentRepo.findById(id);
+        return  ownerRepo.findById(id);
     }
 
 }

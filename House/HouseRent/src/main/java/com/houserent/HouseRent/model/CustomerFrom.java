@@ -23,6 +23,9 @@ public class CustomerFrom {
     private String cus_Mobile;
     private String cus_Gender;
     private String cus_Address;
+
+    private String image;
+
     private String cus_Date;
 
 

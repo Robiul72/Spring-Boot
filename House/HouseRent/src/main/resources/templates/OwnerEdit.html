@@ -1,63 +1,144 @@
-<div th:insert="header.html"></div>
-<div th:insert="sidebar.html">...</div>
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
 
 
 <main id="main" class="main">
-    <div class="employee_summary">
-        <div class="pagetitle">
-            <h1>House Rent Form</h1>
+
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item "><a th:href="@{/}">Owner Add Form</a></li>
+
+      </ol>
+    </nav>
+  </div>
+
+  <section class="section">
+    <div class="row">
+      <div class="col-md-10 offset-1">
+
+
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title" style="text-align: center">Owner Add Form</h1>
+
+            <!-- Multi Columns Form -->
+            <form th:action="@{/owner/save}" th:object="${ownerModelList}" method="post"  >
+              <input type="hidden" th:field="*{id}">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label  class="form-label">NID No</label>
+                  <input type="text" class="form-control" th:field="*{h_Rent_NID}" >
+                </div>
+
+                <div class="col-md-6">
+                  <label  class="form-label">House Owner Name</label>
+                  <input type="text" class="form-control" th:field="*{h_Rent_Owner_Name}" >
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <label  class="form-label">House Agreement Date</label>
+                  <input type="text" class="form-control" th:field="*{h_Rent_Date}">
+                </div>
+
+                <div class="col-md-6">
+                  <label  class="form-label">Mobile No</label>
+                  <input type="text" class="form-control" th:field="*{h_Rent_Mobile}">
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label  class="form-label">Email</label>
+                  <input type="email" class="form-control" th:field="*{h_Rent_Email}">
+                </div>
+              </div>
+
+              <div class="p-2"></div>
+
+              <!--                            <div class="row">-->
+              <!--                                <div class="col-md-6">-->
+
+              <!--                                    <input type="file" th:field="*{image}" accept="image/*" onchange="previewImage()"><br>-->
+              <!--                                    <img th:if="${houserent.image ne null}" th:src="@{/assets/images/users/{filename}(filename=${houserent.image})}" alt="Owner Image" style="max-width: 100%;"><br>-->
+              <!--                                    <img id="imagePreview" src="#" alt="Owner Image" style="display: none; width: 100px;">-->
+
+              <!--                                </div>-->
+              <!--                            </div>-->
+
+              <div class="col-12">
+                <div class="form-check p-2 ms-3">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Check me out
+                  </label>
+                </div>
+              </div>
+              <div class="text-center p-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <!--                                <button type="reset" class="btn btn-secondary">Reset</button>-->
+              </div>
+            </form><!-- End Multi Columns Form -->
+
+          </div>
         </div>
 
-        <section class="section dashboard">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-xxl-10 col-md-10">
-                            <div class="card info-card total_employees_card">
+      </div>
 
-                                <div class="px-3">
-<!--                                    <form th:action="@{/houserent/save}" th:object="${houserentedit}" method="post" >-->
-
-                                        <form th:action="@{/owner/save}" th:object="${houserentedit}" method="post" >
-
-                                            <input type="hidden" th:field="*{id}">
-
-                                        <label>NID No</label>
-                                        <input type="text" th:field="*{h_Rent_NID}"><br>
-
-                                        <label>Owner Name</label>
-                                        <input type="text" th:field="*{h_Rent_Owner_Name}"><br>
-
-
-                                        <label>Email </label>
-                                        <input type="email" th:field="*{h_Rent_Email}"><br>
-
-                                        <label>Mobile No </label>
-                                        <input type="text" th:field="*{h_Rent_Mobile}"><br>
-
-                                        <label>House Agreement Date </label>
-                                        <input type="text" th:field="*{h_Rent_Date}"><br>
-
-<!--                                            <label>Owner Image </label>-->
-<!--                                            <input type="file" th:field="*{image}" accept="image/*" onchange="previewImage()"><br>-->
-<!--                                            <img th:if="${houserent.image ne null}" th:src="@{/assets/images/users/{filename}(filename=${user.image})}" alt="User Image" style="max-width: 100%;"><br>-->
-<!--                                            <img id="imagePreview" src="#" alt="User Image" style="display: none; width: 100px;">-->
-
-
-                                            <input type="submit" value="Update">
-
-
-                                    </form>
-                                </div>
-
-
-                            </div>
-                        </div><!--End Reports -->
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
+  </section>
 </main><!-- End #main -->
 
-<div th:insert="footer.html">...</div>l>
+<!--<script>-->
+<!--    function previewImage() {-->
+<!--        var input = document.querySelector('input[type="file"]');-->
+<!--        var preview = document.getElementById('imagePreview');-->
+
+<!--        if (input.files && input.files[0]) {-->
+<!--            var reader = new FileReader();-->
+
+<!--            reader.onload = function (e) {-->
+<!--                preview.src = e.target.result;-->
+<!--                preview.style.display = 'block';-->
+<!--            };-->
+
+<!--            reader.readAsDataURL(input.files[0]);-->
+<!--        } else {-->
+<!--            preview.src = '#';-->
+<!--            preview.style.display = 'none';-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+<!--<script>-->
+
+<!--    function previewImage(){-->
+<!--        var input = document.querySelector('input[type="file"]');-->
+<!--        var preview = document.getElementById('imagePreview');-->
+
+<!--        if(input.files && input.files[0]){-->
+<!--            var reader = new FileReader();-->
+
+<!--            reader.onload = function (e){-->
+<!--                preview.src = e.target.result;-->
+<!--                preview.style.display = 'black';-->
+<!--            };-->
+<!--            reader.readAsDataURL(input.files[0]);-->
+<!--        } else {-->
+<!--            preview.src = '#';-->
+<!--            preview.style.display = 'none';-->
+<!--        }-->
+<!--    }-->
+
+<!--</script>-->
+
+
+<div th:insert="~{footer.html}">...</div>

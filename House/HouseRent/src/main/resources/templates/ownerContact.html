@@ -1,0 +1,93 @@
+<div th:insert="user_header"></div>
+<main id="main" class="main">
+    <div class="pagetitle ms-2">
+        <h1 style="text-align: center">Owner Contact Page</h1>
+    </div>
+    <br>
+
+    <section class="section">
+                <div class="card">
+
+                                <div class="card col-md-12 mb-2"  th:each="h : ${ownerModels}">
+                                    <div class="col-md-12">
+                                        <div class="card-body">
+                                            <h5 class="card-title p-2" style="text-align: center" th:text="' Owner Name :    ' +${h.h_Rent_Owner_Name}"></h5>
+                                            <h5 class="card-title p-2" style="text-align: center" th:text="' Mobile No :    ' +${h.h_Rent_Mobile}"></h5>
+                                            <h5 class="card-title p-2" style="text-align: center" th:text="' Email No  :    ' +${h.h_Rent_Email}"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+    </section>
+</main>
+
+<div th:insert="~{user_footer}">...</div>
+
+
+
+
+<!--<div th:insert="user_header.html">...</div>-->
+
+<!--<main id="main" class="main p-4">-->
+
+<!--    <div class="pagetitle">-->
+<!--        <h1>Dashboard</h1>-->
+<!--        <div class="pagetitle  text-center">-->
+<!--            <h1>Owner Details</h1>-->
+<!--        </div>-->
+<!--    </div> <br>-->
+
+
+<!--    <section class="section profile">-->
+<!--        <div th:action="@{/houserent/save}" th:object="${contactdetails}" method="post">-->
+<!--            -->
+<!--            <div class="col-xl-12"  >-->
+<!--                <div class="card">-->
+<!--                    <div class="card-body profile-card  d-flex flex-column align-items-center" >-->
+<!--&lt;!&ndash;                        <img src="/assets/img/news-2.jpg" width="100%"> <br>&ndash;&gt;-->
+
+<!--                        <div class="row" th:each="field : ${contactdetails}">-->
+<!--                            <h3 class="card-title p-2" style="text-align: center" th:text="${contactdetails.get().build_Name}"></h3>-->
+<!--                        </div>-->
+<!--                        -->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <input type="hidden" name="sid" th:value="${contactdetails.get().id}">-->
+<!--            <div class="row ">-->
+<!--                <div class="col-xl-12 py-3">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body ">-->
+<!--                            <div class="tab-content pt-2">-->
+<!--                                <div class="tab-pane fade show active profile-overview" id="profile-overview">-->
+<!--                                    <h5 class="card-title">Owner Details</h5>-->
+
+<!--                                    <div class="row" th:each="field : ${contactdetails}">-->
+<!--                                        <div class="col-lg-3 col-md-4 lable"  >House Owner Name</div>-->
+<!--                                        <div class="col-lg-9 col-md-8" th:text="${contactdetails.get().ownerName.h_Rent_Owner_Name}" ></div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="row" th:each="field : ${contactdetails}">-->
+<!--                                        <div class="col-lg-3 col-md-4 lable"  >Mobile No</div>-->
+<!--                                        <div class="col-lg-9 col-md-8" th:text="${contactdetails.get().h_Rent_Mobile}" ></div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="row" th:each="field : ${contactdetails}">-->
+<!--                                        <div class="col-lg-3 col-md-4 lable"  >Email No</div>-->
+<!--                                        <div class="col-lg-9 col-md-8" th:text="${contactdetails.get().h_Rent_Email}" ></div>-->
+<!--                                    </div>-->
+<!--                                    -->
+<!--                                </div>-->
+<!--                            </div>&lt;!&ndash; End Bordered Tabs &ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</main>-->
+
+<!--<div th:insert="user_footer.html">...</div>-->
+

@@ -1,0 +1,127 @@
+<div th:insert="~{user_header}"></div>
+
+<!--<div th:insert="~{header.html}">...</div>-->
+<!--<div th:insert="~{sidebar.html}">...</div>-->
+
+<main id="main" class="main">
+    <div class="pagetitle  text-center">
+        <h1>House  View </h1>
+
+    </div>
+    <br>
+
+    <form th:action="@{/houseLocationAndBedroomSearch}"  th:object="${userjobdatas}" method="post">
+
+        <div class="col-md-12 p-4">
+            <div  class="card mt-2">
+                <div class="card-body" style="background-color: #2a64a6">
+                    <div class="row" >
+                        <div class="col-md-3"></div>
+
+                        <div class=" col-md-4">
+                            <label><h5>Location</h5></label>
+                            <select  name="location" class="custom-select" id="location">
+                                <option value="Mohammadpur"> Mohammadpur </option>
+                                <option value="Dhanmundi"> Dhanmundi </option>
+                                <option value="Mirpur"> Mirpur </option>
+                                <option value="Adabor"> Adabor </option>
+                                <option value="Shere_Bangla_Nagor"> Shere_Bangla_Nagor </option>
+                                <option value="Shahbag"> Shahbag </option>
+                            </select>
+                        </div>
+
+<!--                        <div class=" col-md-3">-->
+<!--                            <label><h5>Bedroom</h5></label>-->
+<!--                            <select  name="bedroom" class="custom-select" id="bedroom">-->
+<!--                                <option value="2 Bedroom"> 1 Bedroom </option>-->
+<!--                                <option value="2 Bedroom"> 2 Bedroom </option>-->
+<!--                                <option value="3 Bedroom"> 3 Bedroom </option>-->
+<!--                                <option value="4 Bedroom"> 4 Bedroom </option>-->
+<!--                                <option value="5 Bedroom"> 5 Bedroom </option>-->
+<!--                                <option value="6 Bedroom"> 6 Bedroom </option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+
+                        <div class="col-md-2">
+                            <button type="submit"> Search</button>
+                        </div>
+                        <div class="col-md-3"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+   <div class="card p-2">
+
+
+           <div class="row mt-1">
+
+               <div class="col-md-3 p-4" th:each="job : ${userjobdatas}">
+
+                   <div  class="card mt-2">
+
+                       <div class="row p-4">
+                           <div class="col-md-12">
+                               <td><img height="200px" width="100%"  th:src="@{${'/house/display?id=' + job.id}}" alt=""></td>
+
+                           </div>
+                       </div>
+
+                       <div class="row p-1">
+                           <div class="col-md-12">
+                               <input type="text" class="form-control form-control-sm" th:value="${'Owner Name: ' + job.ownerName.h_Rent_Owner_Name}" readonly>
+                           </div>
+                       </div>
+
+                       <div class="row p-1">
+                           <div class="col-md-12">
+                               <input type="text" class="form-control form-control-sm" th:value="${'House Name: ' + job.build_Name}" readonly>
+                           </div>
+                       </div>
+
+
+                       <div class="row p-1">
+                           <div class="col-md-12">
+                               <input type="text" class="form-control form-control-sm" th:value="${'Location: ' + job.location}" readonly>
+                           </div>
+                       </div>
+
+                       <div class="row p-1">
+                           <div class="col-md-12">
+                               <input type="text" class="form-control form-control-sm" th:value="${'Bedroom: ' + job.bedroom}" readonly>
+                           </div>
+                       </div>
+
+                       <div class="row p-1">
+                           <div class="col-md-12">
+                               <input type="text" class="form-control form-control-sm" th:value="${'Description: ' + job.description}" readonly>
+                           </div>
+                       </div>
+                       <div class="row p-1">
+                           <div class="col-md-12">
+                               <input type="text" class="form-control form-control-sm" th:value="${'Monthly Cost: ' + job.total_cost}" readonly>
+                           </div>
+                       </div>
+
+                       <div class="text-center p-5" >
+                           <a class="btn btn-primary" th:href="@{'/building/details/'+${job.id}}"> More Details </a>
+                           <!-- You can add links to edit and delete job here -->
+                           <!--                <a th:href="@{'/userViewSeeMore/'+ ${job.id}}" class="btn btn-sm bg-success text-white">See More & Apply</a>-->
+                           <!--                        <a th:href="@{'/deleteJob/'+ ${job.id}}" class="btn btn-sm bg-danger text-white">Delete</a> -->
+                       </div>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </div>
+
+
+</main>
+
+<div th:insert="~{user_footer}">...</div>
