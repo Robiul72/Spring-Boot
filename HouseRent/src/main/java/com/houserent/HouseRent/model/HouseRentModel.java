@@ -38,14 +38,9 @@ public class HouseRentModel {
     private String image;
 
     @Temporal(TemporalType.TIMESTAMP)
-<<<<<<< HEAD
 //    @Column(name = "date", nullable = false, updatable = false)
     private Date date;
 
-=======
-
-    private Date date;
->>>>>>> 0feac06c7d881a01c80ed618e36c274ca4031ede
     @PrePersist
     protected void onCreate() {
         date = new Date();

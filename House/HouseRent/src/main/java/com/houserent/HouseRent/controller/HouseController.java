@@ -2,6 +2,7 @@ package com.houserent.HouseRent.controller;
 
 import com.houserent.HouseRent.model.HouseRentModel;
 import com.houserent.HouseRent.model.OwnerEntityModel;
+import com.houserent.HouseRent.model.OwnerModel;
 import com.houserent.HouseRent.repository.IHouseRepo;
 import com.houserent.HouseRent.service.HouseService;
 import com.houserent.HouseRent.service.OwnerService;
@@ -40,7 +41,7 @@ public class HouseController {
     //  House Rent Form start
     @GetMapping("/house/form")
     public String houseRentForm(Model m){
-        List<OwnerEntityModel> ownerList=ownerService.getAllOwner();
+        List<OwnerModel> ownerList=ownerService.getAllOwner();
 
         // to add department as dropdown from Department Model using Join Querry
 
