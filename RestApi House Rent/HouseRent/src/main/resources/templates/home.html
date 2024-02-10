@@ -1,0 +1,65 @@
+<div th:insert="user_header"></div>
+
+<main id="main" class="main">
+    <div class="pagetitle ms-2">
+        <h1>Customer View Page</h1>
+<!--        <nav>-->
+<!--            <ol class="breadcrumb">-->
+<!--                <li class="breadcrumb-item "><a th:href="@{/}">House Rent</a></li>-->
+<!--                <li class="breadcrumb-item active" ><a th:href="@{/houseview}">View House </a> </li>-->
+<!--            </ol>-->
+<!--        </nav>-->
+    </div>
+
+    <br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-11 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+                            <div class="card col-md-4 mb-2" th:each="h : ${houseRentModelList}">
+                                <div class="row g-0">
+                                    <div class="col-md-12 p-1">
+                                        <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..." height="30px"><br><br>
+
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="card-body">
+                                            <h5 class="card-title p-2" style="text-align: center" th:text="${h.h_Rent_Name}"></h5>
+
+                                            <b><span th:text="' Price :    ' +${h.h_Rent_Bedroom}"></span></b><br>
+
+                                            <b><span th:text="' Price :    ' +${h.h_Rent_Price}"></span></b><br>
+
+                                            <b><span th:text="' Address :   ' +${h.h_Rent_Address}"></span></b><br>
+
+                                        </div>
+
+                                        <div style="text-align: center">
+                                            <a class="btn btn-primary" th:href="@{'/houserent/details/'+${h.id}}"> More Details </a>
+
+
+                                        </div>
+
+                                        <div class="p-2"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end my work -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div th:insert="~{user_footer}">...</div>
+

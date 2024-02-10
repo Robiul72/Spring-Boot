@@ -1,0 +1,95 @@
+<!--<link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}">-->
+<!--</head>-->
+<!--<body>-->
+
+
+
+<!--<form th:action="@{/user/edituser/{id}}" th:object="${useredit}" method="post" >-->
+
+<!--   <input type="hidden" th:field="*{id}">-->
+<!--    <label>First Name</label>-->
+<!--    <input type="text" th:field="*{name}"><br>-->
+
+<!--    <label>Email</label>-->
+<!--    <input type="email" th:field="*{email}"><br>-->
+
+<!--    <label>Password</label>-->
+<!--    <input type="password" th:field="*{password}"><br>-->
+
+<!--    <label>Cell </label>-->
+<!--    <input type="text" th:field="*{cellNo}"><br>-->
+
+
+<!--    <label>gender </label>-->
+<!--    <input type="text" th:field="*{gender}"><br>-->
+
+<!--    <input type="submit" class="btn btn-success" value="Update">-->
+
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+<div th:insert="header.html">...</div>
+<div th:insert="sidebar.html">...</div>
+
+<main id="main" class="main">
+
+ <div class="pagetitle">
+  <h1 class="text-center">All Depratments</h1>
+
+ </div><!-- End Page Title -->
+
+ <section class="section">
+  <div class="row">
+   <div class="col-md-10 offset-1">
+    <div class="card">
+     <div class="card-body mt-3">
+
+      <!-- start my work-->
+
+
+      <form th:action="@{/user/saveuser}" th:object="${useredit}" method="post" >
+
+         <input type="hidden" th:field="*{id}">
+       <label class="form-label">First Name</label>
+       <input type="text" class="form-control" th:field="*{name}"><br>
+
+       <label class="form-label">Email</label>
+       <input class="form-control" type="email" th:field="*{email}"><br>
+
+       <label class="form-label">Password</label>
+       <input type="password" class="form-control"  th:field="*{password}"><br>
+
+       <label class="form-label">Cell </label>
+       <input class="form-control" type="text" th:field="*{cellNo}"><br>
+
+
+       <label class="form-label">gender </label>
+       <input class="form-control" type="text" th:field="*{gender}"><br>
+
+       <input class="form-control bg-success text-light"  type="submit" value="Update">
+
+
+      </form>
+      <!--                        end my work-->
+     </div>
+
+    </div>
+
+   </div>
+
+  </div>
+ </section>
+</main><!-- End #main -->
+
+<div th:insert="footer.html">...</div>

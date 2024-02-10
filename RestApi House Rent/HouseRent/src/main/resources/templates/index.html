@@ -1,0 +1,105 @@
+
+
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+    <div class="pagetitle ms-2">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a th:href="@{/}">Report</a></li>
+                <li class="breadcrumb-item active">Report View  </li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="pagetitle  text-center">
+        <h1>All Summery</h1>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+
+                            <!--                            // total Owner Summery start-->
+                            <div class="card col-md-4 p-2">
+                                <div class="row g-0">
+                                    <a th:href="@{/owner/view}">
+                                        <div class="col-md-12">
+
+                                            <div class="alert alert-info" role="alert">
+                                                <h5>Total Owners:</h5>
+                                                <strong th:text="${totalOwners}"></strong>
+                                            </div>
+
+                                            <div class="row">
+                                                <th:block th:each="Owner : ${owners}">
+                                                    <!-- Card structure remains the same -->
+                                                </th:block>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--                            // total Owner Summery end-->
+
+
+                            <!--                            // total House Summery start-->
+                            <div class="card col-md-4 p-2">
+                                <div class="row g-0">
+                                    <a th:href="@{/houserent/view}">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-primary" role="alert">
+                                                <h5>Total Houses:</h5> <strong th:text="${totalHouses}"></strong>
+                                            </div>
+                                            <div class="row">
+                                                <th:block th:each="houseRent : ${houseRents}">
+                                                    <!-- Card structure remains the same -->
+                                                </th:block>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!--                            // total Owner Summery end-->
+
+
+                            <!--                            // total Customer Summery start-->
+
+                            <div class="card col-md-4 p-2">
+                                <div class="row g-0">
+                                    <a th:href="@{/customer/view}">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-primary" role="alert">
+                                                <h5>Total Client:</h5> <strong th:text="${totalCustomers}"></strong>
+                                            </div>
+                                            <div class="row">
+                                                <th:block th:each="customer : ${customers}">
+                                                    <!-- Card structure remains the same -->
+                                                </th:block>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--                            // total Owner Summery end-->
+                        </div>
+
+                        <!-- end my work -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div th:insert="~{footer.html}">...</div>
