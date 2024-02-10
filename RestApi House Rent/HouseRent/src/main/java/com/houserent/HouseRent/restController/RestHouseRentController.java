@@ -21,25 +21,28 @@ public class RestHouseRentController {
     @Autowired
     private IHouseRentRepo houseRentRepo;
 
+    @Autowired
+    private HouseRentService houseRentService;
 
-    // Get Api Owner Method Start
+
+    // Get Api House Method Start
     @GetMapping("/house")
     public List<HouseRentModel> allHouseRentModels(){
         return  houseRentRepo.findAll();
     }
-    // Get Api Owner Method end
+    // Get Api House Method end
 
 
-    // Post Api Owner Method Start
+    // Post Api House Method Start
     @PostMapping("/house")
     public HouseRentModel saveOwner(@RequestBody HouseRentModel houseRentModel){
         return houseRentRepo.save(houseRentModel);
     }
-    // Post Api Owner Method end
+    // Post Api House Method end
 
 
-    // Delete Api Owner Method Start
-    private final HouseRentService houseRentService;
+    // Delete Api House Method Start
+//    private final HouseRentService houseRentService;
 
     public RestHouseRentController(HouseRentService houseRentService) {
         this.houseRentService = houseRentService;
@@ -54,10 +57,26 @@ public class RestHouseRentController {
         houseRentService.deleteHouseRent(id);
         return new ResponseEntity<>("HouseRentModel deleted successfully", HttpStatus.OK);
     }
-    // Post Api Owner Method end
+    // Delete Api House Method end
 
 
+    // Update Api House Method start
+    @PutMapping("/house/{id}")
+    public ResponseEntity<String> updateHouseRent(@PathVariable ("id") int id, @RequestBody HouseRentModel houseRentModel) {
+        Optional<HouseRentModel> exiting = houseRentRepo.findById(id);
 
+        if(exiting.isEmpty()){
+           return new ResponseEntity<>("House Rent is Not Update", HttpStatus.NOT_FOUND);
+        }
+
+        houseRentService.updateHouseRent(exiting);
+        return new ResponseEntity<>("House Rent is Update", HttpStatus.OK);
+
+//        this.houseRentService.updateHouseRent(houseRentModel, id);
+//
+//        return houseRentModel;
+    }
+// Update Api House Method end
 
 
 
